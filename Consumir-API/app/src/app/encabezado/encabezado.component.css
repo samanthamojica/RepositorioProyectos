@@ -1,0 +1,14 @@
+.encabezado {
+    background-color: #e1e8ec;
+    width: 100vw;
+    display: flex;
+    padding: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.encabezado .imagen {}
+
+.encabezado .navbar-nav {
+    background-color: #e1e8ec;
+}

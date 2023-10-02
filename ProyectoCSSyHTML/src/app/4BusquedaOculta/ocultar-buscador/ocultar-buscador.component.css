@@ -1,0 +1,123 @@
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.search {
+    position: relative;
+    background-color: yellow;
+    height: 50px;
+}
+
+.search .input {
+    background-color: red;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+.btn {
+    background-color: pink;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 200px;
+}
+
+.search.active .btn {
+    transform: translateX(198px);
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7d5fff;
+    margin: 0;
+    display: flex;
+    /* es elemento padre  por eso le ponemos el valor de flex */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* vh viewport height (altura de la pantalla) */
+}
+
+.search {
+    background-color: yellow;
+    /*  padding: 15px; */
+    margin: 5px solid;
+    position: relative;
+}
+
+.input {
+    background-color: #fff;
+    border: 0;
+    height: 50px;
+    width: 50px;
+    padding: 15px;
+    font-size: 18px;
+    top: 0;
+    left: 0;
+}
+
+.btn {
+    border: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.search.actived .input {
+    width: 200px;
+}
+
+.search.actived .btn {
+    transform: translateX(200px);
+}
+
+
+/*las clases .search.actived*/
+
+
+/* en mi template tengo definida la clase .search y la clase .input 
+pero desde mi componente agrego la clase .actived cuando le dan click al */
