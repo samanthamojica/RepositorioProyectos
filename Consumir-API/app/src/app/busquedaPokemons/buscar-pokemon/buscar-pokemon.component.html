@@ -1,1 +1,31 @@
-<p>buscar-pokemon works!</p>
+<div class="contenedorPokemons" *ngIf="band">
+
+    <div class="imagenPokemon">
+        <img src="{{urlImagen1}}" alt="">
+    </div>
+
+    <div class="informacionPokemon">
+
+        <h5 class="card-title">{{nombrePokemon}}</h5>
+
+        <div class="movimientos">
+            <p class="card-text">Movimientos:</p>
+            <ng-container *ngFor="let mov of movimientos ">
+                <p>{{mov}}</p>
+            </ng-container>
+        </div>
+
+        <div class="tipoPokemon">
+            <p>Tipo:</p>
+            <ng-container *ngFor="let tipo of arregloTipo ">
+                <p>{{tipo}}</p>
+            </ng-container>
+        </div>
+        <div class="habilidadesPokemon">
+            <p class="card-text">Habilidades</p>
+            <ng-container *ngFor="let hab of arregloHabilidades ">
+                <p> {{hab}}</p>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -19,44 +19,13 @@
         <p>Ingresa el nombre del Pokemon que quieres buscar</p>
         <div class="search">
             <input type="text" class="input" placeholder="Buscar..." [(ngModel)]="nombrePokemon">
-            <button class="btn" (click)="buscarPokemon()" id="inputBoton">
+            <button class="btn" (click)="navegarToBuscarPokemon()" id="inputBoton">
                 <fa-icon [icon]="faSearch"></fa-icon>
             </button>
         </div>
     </div>
 
-    <div class="contenedorPokemons" *ngIf="band">
-
-        <div class="imagenPokemon">
-            <img src="{{urlImagen1}}" alt="">
-        </div>
-
-        <div class="informacionPokemon">
-
-            <h5 class="card-title">{{nombrePokemon}}</h5>
-
-            <div class="movimientos">
-                <p class="card-text">Movimientos:</p>
-                <ng-container *ngFor="let mov of movimientos ">
-                    <p>{{mov}}</p>
-                </ng-container>
-            </div>
-
-            <div class="tipoPokemon">
-                <p>Tipo:</p>
-                <ng-container *ngFor="let tipo of arregloTipo ">
-                    <p>{{tipo}}</p>
-                </ng-container>
-            </div>
-            <div class="habilidadesPokemon">
-                <p class="card-text">Habilidades</p>
-                <ng-container *ngFor="let hab of arregloHabilidades ">
-                    <p> {{hab}}</p>
-                </ng-container>
-            </div>
-        </div>
-    </div>
-
+    <app-buscar-pokemon></app-buscar-pokemon>
 </body>
 
 </html>
