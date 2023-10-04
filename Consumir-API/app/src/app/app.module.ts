@@ -8,12 +8,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { BuscarPokemonComponent } from './busquedaPokemons/buscar-pokemon/buscar-pokemon.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EncabezadoComponent ,
-    BuscarPokemonComponent 
+    BuscarPokemonComponent,
+    FooterComponent 
   ],
   imports: [
     BrowserModule,

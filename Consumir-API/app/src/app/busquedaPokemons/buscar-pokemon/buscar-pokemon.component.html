@@ -6,26 +6,29 @@
 
     <div class="informacionPokemon">
 
-        <h5 class="card-title">{{nombrePokemon}}</h5>
+        <div class="titulo">
+            <h3 class="card-title">{{nombrePokemon}}</h3>
+        </div>
 
+        <h5>Movimientos:</h5>
         <div class="movimientos">
-            <p class="card-text">Movimientos:</p>
-            <ng-container *ngFor="let mov of movimientos ">
+            <div class="movimiento" *ngFor="let mov of movimientos ">
                 <p>{{mov}}</p>
-            </ng-container>
+            </div>
         </div>
 
+        <h5>Tipo:</h5>
         <div class="tipoPokemon">
-            <p>Tipo:</p>
-            <ng-container *ngFor="let tipo of arregloTipo ">
-                <p>{{tipo}}</p>
-            </ng-container>
+            <div class="tipo" *ngFor="let tipo of arregloTipo ">
+                <p>{{tipo + " "}}</p>
+            </div>
         </div>
+
+        <h5>Habilidades:</h5>
         <div class="habilidadesPokemon">
-            <p class="card-text">Habilidades</p>
-            <ng-container *ngFor="let hab of arregloHabilidades ">
+            <div class="habilidad" *ngFor="let hab of arregloHabilidades ">
                 <p> {{hab}}</p>
-            </ng-container>
+            </div>
         </div>
     </div>
 </div>

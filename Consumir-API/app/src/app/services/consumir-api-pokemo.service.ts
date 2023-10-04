@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class ConsumirApiPokemoService {
+  
   public notifador : Subject<string | undefined> = new Subject<string | undefined>();
   
   url = ' https://pokeapi.co/api/v2/pokemon/';

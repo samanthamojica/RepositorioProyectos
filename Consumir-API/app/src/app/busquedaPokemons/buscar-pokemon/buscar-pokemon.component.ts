@@ -1,12 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 import { ConsumirApiPokemoService } from 'src/app/services/consumir-api-pokemo.service';
+
+
 
 @Component({
   selector: 'app-buscar-pokemon',
   templateUrl: './buscar-pokemon.component.html',
   styleUrls: ['./buscar-pokemon.component.css'],
 })
+
+
 export class BuscarPokemonComponent {
+
+  @Input() nombrePokemon: string | undefined;
+  //voy a recibir un valor que me va a mandar el componente padre
+
   inputBoton = document.getElementById('inputBoton') as HTMLInputElement;
   urlImagen1: string = '';
   urlImagen2: string = '';
@@ -15,35 +23,30 @@ export class BuscarPokemonComponent {
   arregloTipo: string[] = [];
   arregloHabilidades: string[] = [];
   band = false;
-  
-  @Input() nombrePokemon: string | undefined;  
-  //voy a recibir un valor que me va a mandar el componente padre
-  
- //nombrePokemon: string | undefined;
 
   constructor(private consumirApiPokemoService: ConsumirApiPokemoService) {}
+
   ngOnInit(): void {
     this.buscarPokemon();
-    this.consumirApiPokemoService.notifador.subscribe((nombre: string | undefined) => {
+    this.consumirApiPokemoService.notifador.subscribe(
+      (nombre: string | undefined) => {
         this.nombrePokemon = nombre;
         this.buscarPokemon();
       }
     );
-   
   }
 
   buscarPokemon() {
-    console.log(this.nombrePokemon);
-    debugger;
     this.movimientos = [];
     this.arregloTipo = [];
     this.arregloHabilidades = [];
     if (this.nombrePokemon) {
-      debugger;
       this.consumirApiPokemoService
         .getPokemon(this.nombrePokemon.toLowerCase())
         .subscribe((pokemon: any) => {
-          this.nombrePokemon = pokemon.name;
+         let nombre = pokemon.name
+          this.nombrePokemon = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+                   
           this.urlImagen1 = pokemon.sprites.other.home.front_default;
           this.urlImagen3 = pokemon.sprites.other.home.front_shiny;
           for (let i of pokemon.types) {
@@ -57,11 +60,9 @@ export class BuscarPokemonComponent {
           }
           this.band = true;
           this.inputBoton.value = '';
-          debugger;
         });
     } else {
       console.log('Ingrese un nombre valido');
-      debugger;
     }
   }
 }

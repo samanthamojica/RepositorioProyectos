@@ -1,0 +1,104 @@
+                     * {
+                         box-sizing: border-box;
+                     }
+                     
+                     .contenedorPokemons {
+                         /*  background-color: #e1e8ec; */
+                         display: flex;
+                         flex-direction: row;
+                         margin-top: 50px;
+                     }
+                     
+                     .contenedorPokemons .imagenPokemon {
+                         /*  background-color: tomato; */
+                         width: 50vw;
+                         overflow: hidden;
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+                     }
+                     
+                     .informacionPokemon {
+                         /*   background-color: blue; */
+                         text-align: left;
+                         display: flex;
+                         flex-direction: column;
+                     }
+                     
+                     .informacionPokemon .titulo {
+                         padding: 15px;
+                         width: 50vw;
+                     }
+                     
+                     .informacionPokemon h3 {
+                         font-family: Georgia, 'Times New Roman', Times, serif;
+                         font-size: 35px;
+                         text-align: center;
+                     }
+                     
+                     .informacionPokemon h5 {
+                         color: #01587a;
+                         font-family: Georgia, 'Times New Roman', Times, serif;
+                         font-size: 20px;
+                         background-color: rgba(153, 216, 221, 0.2);
+                         opacity: 0.7;
+                     }
+                     
+                     .informacionPokemon p {
+                         font-family: Georgia, 'Times New Roman', Times, serif;
+                         font-size: 18px;
+                     }
+                     /* *************************************MOVIMIENTOS */
+                     
+                     .informacionPokemon .movimientos {
+                         padding: 15px;
+                         display: flex;
+                         flex-direction: row;
+                         flex-wrap: wrap;
+                     }
+                     
+                     .informacionPokemon .movimientos .movimiento {
+                         padding: 10px;
+                     }
+                     
+                     .informacionPokemon .movimientos .movimiento p {
+                         display: inline;
+                         padding: 10px;
+                         width: 15vw;
+                     }
+                     /************************************** Tipo de Pokemon */
+                     
+                     .informacionPokemon .tipoPokemon {
+                         padding: 15px;
+                         display: flex;
+                         flex-direction: row;
+                         flex-wrap: wrap;
+                     }
+                     
+                     .informacionPokemon .tipoPokemon .tipo {
+                         padding: 10px;
+                     }
+                     
+                     .informacionPokemon .tipoPokemon .tipo p {
+                         display: inline;
+                         padding: 10px;
+                         width: 15vw;
+                     }
+                     /* *************************************Habilidades */
+                     
+                     .informacionPokemon .habilidadesPokemon {
+                         padding: 15px;
+                         display: flex;
+                         flex-direction: row;
+                         flex-wrap: wrap;
+                     }
+                     
+                     .informacionPokemon .habilidadesPokemon .habilidad {
+                         padding: 10px;
+                     }
+                     
+                     .informacionPokemon .habilidadesPokemon .habilidad p {
+                         display: inline;
+                         padding: 10px;
+                         width: 15vw;
+                     }

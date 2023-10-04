@@ -5,6 +5,7 @@
         body {
             display: flex;
             flex-direction: column;
+            /*    background-color: #e1e8ec; */
         }
         
         .imagenPrincipal img {
