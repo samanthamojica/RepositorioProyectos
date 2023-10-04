@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
 import { ConsumirApiPokemoService } from 'src/app/services/consumir-api-pokemo.service';
 
 @Component({
@@ -15,35 +14,54 @@ export class BuscarPokemonComponent {
   movimientos: string[] = [];
   arregloTipo: string[] = [];
   arregloHabilidades: string[] = [];
-  nombrePokemon: string = 'Charmander';
   band = false;
+  
+  @Input() nombrePokemon: string | undefined;  
+  //voy a recibir un valor que me va a mandar el componente padre
+  
+ //nombrePokemon: string | undefined;
 
-  constructor(private consumirApiPokemoService: ConsumirApiPokemoService,
-              private ruta: ActivatedRoute
-  ) {}
+  constructor(private consumirApiPokemoService: ConsumirApiPokemoService) {}
+  ngOnInit(): void {
+    this.buscarPokemon();
+    this.consumirApiPokemoService.notifador.subscribe((nombre: string | undefined) => {
+        this.nombrePokemon = nombre;
+        this.buscarPokemon();
+      }
+    );
+   
+  }
 
   buscarPokemon() {
+    console.log(this.nombrePokemon);
+    debugger;
     this.movimientos = [];
     this.arregloTipo = [];
     this.arregloHabilidades = [];
-    this.consumirApiPokemoService
-      .getPokemon(this.nombrePokemon.toLowerCase())
-      .subscribe((pokemon: any) => {
-        this.nombrePokemon = pokemon.name;
-        this.urlImagen1 = pokemon.sprites.other.home.front_default;
-        this.urlImagen3 = pokemon.sprites.other.home.front_shiny;
-        for (let i of pokemon.types) {
-          this.arregloTipo.push(i.type.name);
-        }
-        for (let i of pokemon.abilities) {
-          this.arregloHabilidades.push(i.ability.name);
-        }
-        for (let i = 0; i < 5; i++) {
-          this.movimientos.push(pokemon.moves[i].move.name);
-        }
-        this.band = true;
-        this.inputBoton.value = '';
-        debugger;
-      });
+    if (this.nombrePokemon) {
+      debugger;
+      this.consumirApiPokemoService
+        .getPokemon(this.nombrePokemon.toLowerCase())
+        .subscribe((pokemon: any) => {
+          this.nombrePokemon = pokemon.name;
+          this.urlImagen1 = pokemon.sprites.other.home.front_default;
+          this.urlImagen3 = pokemon.sprites.other.home.front_shiny;
+          for (let i of pokemon.types) {
+            this.arregloTipo.push(i.type.name);
+          }
+          for (let i of pokemon.abilities) {
+            this.arregloHabilidades.push(i.ability.name);
+          }
+          for (let i = 0; i < 5; i++) {
+            this.movimientos.push(pokemon.moves[i].move.name);
+          }
+          this.band = true;
+          this.inputBoton.value = '';
+          debugger;
+        });
+    } else {
+      console.log('Ingrese un nombre valido');
+      debugger;
+    }
   }
 }

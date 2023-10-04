@@ -12,8 +12,8 @@ import { BuscarPokemonComponent } from './busquedaPokemons/buscar-pokemon/buscar
 @NgModule({
   declarations: [
     AppComponent,
-    EncabezadoComponent,
-    BuscarPokemonComponent
+    EncabezadoComponent ,
+    BuscarPokemonComponent 
   ],
   imports: [
     BrowserModule,

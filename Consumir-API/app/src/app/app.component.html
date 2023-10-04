@@ -18,14 +18,17 @@
         <h3>Busca un Pokemon</h3>
         <p>Ingresa el nombre del Pokemon que quieres buscar</p>
         <div class="search">
-            <input type="text" class="input" placeholder="Buscar..." [(ngModel)]="nombrePokemon">
-            <button class="btn" (click)="navegarToBuscarPokemon()" id="inputBoton">
+            <input type="text" class="input" placeholder="Buscar..." [(ngModel)]="nombre">
+            <button class=" btn " (click)="navegarToBuscarPokemon() " id="inputBoton ">
                 <fa-icon [icon]="faSearch"></fa-icon>
             </button>
         </div>
     </div>
 
-    <app-buscar-pokemon></app-buscar-pokemon>
+    <!-- <app-buscar-pokemon [nombrePokemon]="nombrePokemon" *ngIf="nombrePokemon != null"></app-buscar-pokemon> -->
+
+    <!--  <app-buscar-pokemon *ngIf="nombrePokemon != null"></app-buscar-pokemon> -->
+
 </body>
 
 </html>

@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Subject } from 'rxjs';
+import { ConsumirApiPokemoService } from './services/consumir-api-pokemo.service';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +10,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   faSearch = faSearch;
-  nombrePokemon: string = 'Charmander';
-   clic:boolean = false;
- 
+  nombre: string = '';
+  clic: boolean = false;
+  nombrePokemon: string | undefined;
   
 
-  constructor( private router:Router) {}
+  constructor( private consumirApiPokemoService:ConsumirApiPokemoService) {}
 
   ngOnInit(): void {
-
     let search = document.querySelector('.search');
     var input = document.querySelector('.input') as HTMLElement;
     let btn = document.querySelector('.btn');
@@ -27,17 +26,14 @@ export class AppComponent {
       search?.classList.toggle('actived');
       input?.focus();
     });
+    
   }
 
-  navegarToBuscarPokemon(){
-    
-    
-    if(this.clic){
-      console.log('Entro a buscar Pokemon');
-      this.router.navigate(['/buscarPokemons']);
-      debugger
+  navegarToBuscarPokemon() {
+    if (this.clic) {
+      this.nombrePokemon = this.nombre;
     }
     this.clic = true;
-    
+    this.consumirApiPokemoService.notifador.next(this.nombrePokemon);
   }
 }
