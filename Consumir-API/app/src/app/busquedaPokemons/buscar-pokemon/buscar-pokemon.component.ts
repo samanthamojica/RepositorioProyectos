@@ -45,18 +45,18 @@ export class BuscarPokemonComponent {
         .getPokemon(this.nombrePokemon.toLowerCase())
         .subscribe((pokemon: any) => {
          let nombre = pokemon.name
-          this.nombrePokemon = nombre.charAt(0).toUpperCase() + nombre.slice(1);
-                   
+          this.nombrePokemon = nombre.charAt(0).toUpperCase() + nombre.slice(1);                   
           this.urlImagen1 = pokemon.sprites.other.home.front_default;
-          this.urlImagen3 = pokemon.sprites.other.home.front_shiny;
+         this.urlImagen3 = pokemon.sprites.other.home.front_shiny; 
           for (let i of pokemon.types) {
-            this.arregloTipo.push(i.type.name);
+            this.arregloTipo.push((i.type.name.charAt(0).toUpperCase() + i.type.name.slice(1)));
+            debugger
           }
           for (let i of pokemon.abilities) {
-            this.arregloHabilidades.push(i.ability.name);
+            this.arregloHabilidades.push(i.ability.name.charAt(0).toUpperCase() +  i.ability.name.slice(1));
           }
           for (let i = 0; i < 5; i++) {
-            this.movimientos.push(pokemon.moves[i].move.name);
+            this.movimientos.push(pokemon.moves[i].move.name.charAt(0).toUpperCase()+ pokemon.moves[i].move.name.slice(1));
           }
           this.band = true;
           this.inputBoton.value = '';

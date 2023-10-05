@@ -3,7 +3,7 @@
                      }
                      
                      .contenedorPokemons {
-                         /*  background-color: #e1e8ec; */
+                         background-color: #e1e8ec;
                          display: flex;
                          flex-direction: row;
                          margin-top: 50px;

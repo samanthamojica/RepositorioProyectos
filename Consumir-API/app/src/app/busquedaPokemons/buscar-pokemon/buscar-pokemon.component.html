@@ -5,29 +5,25 @@
     </div>
 
     <div class="informacionPokemon">
-
         <div class="titulo">
             <h3 class="card-title">{{nombrePokemon}}</h3>
         </div>
-
-        <h5>Movimientos:</h5>
-        <div class="movimientos">
-            <div class="movimiento" *ngFor="let mov of movimientos ">
-                <p>{{mov}}</p>
-            </div>
-        </div>
-
         <h5>Tipo:</h5>
         <div class="tipoPokemon">
             <div class="tipo" *ngFor="let tipo of arregloTipo ">
                 <p>{{tipo + " "}}</p>
             </div>
         </div>
-
         <h5>Habilidades:</h5>
         <div class="habilidadesPokemon">
             <div class="habilidad" *ngFor="let hab of arregloHabilidades ">
                 <p> {{hab}}</p>
+            </div>
+        </div>
+        <h5>Movimientos:</h5>
+        <div class="movimientos">
+            <div class="movimiento" *ngFor="let mov of movimientos ">
+                <p>{{mov}}</p>
             </div>
         </div>
     </div>

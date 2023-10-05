@@ -1,5 +1,91 @@
 .footer {
-    background-color: rgb( 92, 179, 193);
+    background-color: #e1e8ec;
     width: 100vw;
     padding: 15px;
+}
+
+.footer .pokemon {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-style: normal;
+    color: #5cb3c1;
+}
+
+
+/* ****************************INFORMACION GENERAL */
+
+.footer .informacion {
+    /* background-color: violet; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.footer .informacion p {
+    display: inline-block;
+    /*  background-color: tomato; */
+    padding: 5px;
+    margin: 5px;
+}
+
+.footer .informacion p a {
+    text-decoration: none;
+    color: #01587a;
+}
+
+.footer .informacion p a:hover {
+    color: #01587a;
+}
+
+
+/* *****************************REDES SOCIALES */
+
+.footer .redesSociales {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.footer .redesSociales .facebook {
+    margin: 5px;
+}
+
+.footer .redesSociales .facebook a {
+    font-size: 25px;
+    color: #01587a;
+    margin: 5px;
+}
+
+.footer .redesSociales .linkedin {
+    margin: 5px;
+}
+
+.footer .redesSociales .linkedin a {
+    font-size: 25px;
+    color: #01587a;
+    margin: 5px;
+}
+
+.footer .redesSociales .Github a {
+    font-size: 25px;
+    color: #01587a;
+    margin: 5px;
+}
+
+.footer .redesSociales .Github {
+    margin: 5px;
+}
+
+
+/* ******************************NOMBRE */
+
+.footer .nombre {
+    color: #01587a;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
