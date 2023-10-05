@@ -24,7 +24,9 @@
             </button>
         </div>
     </div>
-    <app-buscar-pokemon [nombrePokemon]="nombrePokemon" *ngIf="nombrePokemon != null"></app-buscar-pokemon>
+
+    <app-buscar-pokemon [nombrePokemon]="nombrePokemon" *ngIf="nombrePokemon != ''"></app-buscar-pokemon>
+
     <app-footer></app-footer>
 </body>
 

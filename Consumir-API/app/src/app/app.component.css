@@ -1,99 +1,101 @@
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            background-color: #e1e8ec;
-        }
-        
-        .imagenPrincipal img {
-            width: 100vw;
-            height: 50%;
-        }
-        
-        .contenedorBusqueda {
-            background-color: #5cb3c1;
-            flex-direction: column;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contenedorBusqueda h3 {
-            margin-top: 40px;
-            font-size: 35px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        
-        .contenedorBusqueda p {
-            margin-top: 30px;
-            font-size: 18px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        
-        .contenedorBusqueda .search {
-            height: 50px;
-            position: relative;
-            margin-top: 0;
-            margin-bottom: 30px;
-        }
-        
-        .contenedorBusqueda .search input {
-            border: 0;
-            font-size: 18px;
-            padding: 15px;
-            height: 50px;
-            width: 50px;
-            transition: width 0.3s ease;
-            background-color: #e1e8ec;
-        }
-        
-        .contenedorBusqueda .search .btn {
-            border: 0;
-            cursor: pointer;
-            font-size: 24px;
-            top: 0;
-            left: 0;
-            position: absolute;
-            height: 50px;
-            width: 50px;
-            transition: width 0.3s ease;
-            background-color: #e1e8ec;
-        }
-        
-        .contenedorBusqueda .search .btn:focus {
-            outline: none
-        }
-        
-        .contenedorBusqueda .search .input:focus {
-            outline: none;
-        }
-        
-        .contenedorBusqueda .search.actived .input {
-            width: 200px;
-        }
-        
-        .contenedorBusqueda .search.actived .btn {
-            transform: translateX(200px);
-            background-color: #f3ba00;
-        }
-        
-        .contenedorPokemons {
-            width: 100vw;
-            background-color: #e1e8ec;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-        
-        .contenedorPokemons .imagenPokemon {
-            margin: 15px;
-            background-color: yellow;
-        }
-        
-        .informacionPokemon {
-            background-color: tomato;
-            width: 30vw;
-        }
+            * {
+                box-sizing: border-box;
+            }
+            
+            body {
+                display: flex;
+                flex-direction: column;
+                background-color: #e1e8ec;
+                width: 100vw;
+                height: auto;
+            }
+            
+            .imagenPrincipal img {
+                width: 100vw;
+                height: 50%;
+            }
+            
+            .contenedorBusqueda {
+                background-color: #5cb3c1;
+                flex-direction: column;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+            
+            .contenedorBusqueda h3 {
+                margin-top: 40px;
+                font-size: 35px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            
+            .contenedorBusqueda p {
+                margin-top: 30px;
+                font-size: 18px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            
+            .contenedorBusqueda .search {
+                height: 50px;
+                position: relative;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .contenedorBusqueda .search input {
+                border: 0;
+                font-size: 18px;
+                padding: 15px;
+                height: 50px;
+                width: 50px;
+                transition: width 0.3s ease;
+                background-color: #e1e8ec;
+            }
+            
+            .contenedorBusqueda .search .btn {
+                border: 0;
+                cursor: pointer;
+                font-size: 24px;
+                top: 0;
+                left: 0;
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                transition: width 0.3s ease;
+                background-color: #e1e8ec;
+            }
+            
+            .contenedorBusqueda .search .btn:focus {
+                outline: none
+            }
+            
+            .contenedorBusqueda .search .input:focus {
+                outline: none;
+            }
+            
+            .contenedorBusqueda .search.actived .input {
+                width: 200px;
+            }
+            
+            .contenedorBusqueda .search.actived .btn {
+                transform: translateX(200px);
+                background-color: #f3ba00;
+            }
+            
+            .contenedorPokemons {
+                width: 100vw;
+                background-color: #e1e8ec;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .contenedorPokemons .imagenPokemon {
+                margin: 15px;
+                background-color: yellow;
+            }
+            
+            .informacionPokemon {
+                background-color: tomato;
+                width: 30vw;
+            }

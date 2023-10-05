@@ -29,8 +29,9 @@ export class AppComponent {
   navegarToBuscarPokemon() {
     if (this.clic) {
       this.nombrePokemon = this.nombre;
+      this.nombre = '';
     }
     this.clic = true;
-   this.consumirApiPokemoService.notifador.next(this.nombrePokemon);
+    this.consumirApiPokemoService.notifador.next(this.nombrePokemon);
   }
 }

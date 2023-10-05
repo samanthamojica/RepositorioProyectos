@@ -5,33 +5,40 @@
 .encabezado {
     background-color: #e1e8ec;
     width: 100vw;
+    /* background-color: red; */
+    padding: 40px;
     display: flex;
-    padding: 15px;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
-
-
-/*  .encabezado .imagen {
-        background-color: yellow;
-    } */
-
-
-/*  .encabezado .imagen a {
-        background-color: springgreen;
-    } */
 
 .encabezado .titulo {
-    /*   background-color: violet; */
+    /*   background-color: yellow; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
-    text-align: center;
+    font-size: 65px;
     font-style: normal;
     color: #5cb3c1;
+    padding: 15px;
+    width: 25vw;
+    text-align: center;
 }
 
-.encabezado .menu .navbar-nav {
-    /*   background-color: #e1e8ec; */
-    /*    background-color: thistle; */
+.encabezado div:nth-child(2) {
+    margin: auto;
+    /*  color: greenyellow; */
+}
+
+.contenedorImagen a img {
+    /*  background-color: blue; */
+    padding: 15px;
+}
+
+.menu {
+    /*  background-color: violet; */
+    padding: 15px;
+}
+
+.menu .navbar {
+    /* background-color: grey; */
     padding: 15px;
 }

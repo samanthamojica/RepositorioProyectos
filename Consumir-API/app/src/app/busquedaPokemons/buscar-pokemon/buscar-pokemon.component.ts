@@ -50,7 +50,7 @@ export class BuscarPokemonComponent {
          this.urlImagen3 = pokemon.sprites.other.home.front_shiny; 
           for (let i of pokemon.types) {
             this.arregloTipo.push((i.type.name.charAt(0).toUpperCase() + i.type.name.slice(1)));
-            debugger
+        //    debugger
           }
           for (let i of pokemon.abilities) {
             this.arregloHabilidades.push(i.ability.name.charAt(0).toUpperCase() +  i.ability.name.slice(1));
