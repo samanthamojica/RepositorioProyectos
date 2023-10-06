@@ -1,34 +1,34 @@
 <div class="contenedorPokemons" *ngIf="band">
 
     <div class="imagenPokemon">
-        <img src="{{urlImagen1}}" alt="">
+        <img src="{{urlImagen1}} " alt=" ">
     </div>
 
-    <div class="informacionPokemon">
-        <div class="titulo">
-            <h3 class="card-title">{{nombrePokemon}}</h3>
+    <div class="informacionPokemon ">
+        <div class="titulo ">
+            <h3 class="card-title ">{{nombrePokemon}}</h3>
         </div>
         <h5>Tipo:</h5>
-        <div class="tipoPokemon">
-            <div class="tipo" *ngFor="let tipo of arregloTipo ">
+        <div class="tipoPokemon ">
+            <div class="tipo " *ngFor="let tipo of arregloTipo ">
                 <p>{{tipo + " "}}</p>
             </div>
         </div>
         <h5>Habilidades:</h5>
-        <div class="habilidadesPokemon">
-            <div class="habilidad" *ngFor="let hab of arregloHabilidades ">
+        <div class="habilidadesPokemon ">
+            <div class="habilidad " *ngFor="let hab of arregloHabilidades ">
                 <p> {{hab}}</p>
             </div>
         </div>
         <h5>Movimientos:</h5>
-        <div class="movimientos">
-            <div class="movimiento" *ngFor="let mov of movimientos ">
+        <div class="movimientos ">
+            <div class="movimiento " *ngFor="let mov of movimientos ">
                 <p>{{mov}}</p>
             </div>
         </div>
     </div>
 
-    <div class="error" *ngIf="bandError">
+    <div class="error " *ngIf="bandError ">
         <p>No se encuentró el Pokémon</p>
     </div>
 </div>

@@ -2,6 +2,9 @@
     background-color: #e1e8ec;
     width: 100vw;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .footer .pokemon {
@@ -88,4 +91,17 @@
     font-size: 14px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
+}
+
+.logo {
+    /*  background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    /* width: 100px; */
+}
+
+.log img {
+    display: block;
+    background-color: red;
+    width: 20px;
 }
