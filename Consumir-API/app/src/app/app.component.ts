@@ -8,10 +8,13 @@ import { ConsumirApiPokemoService } from './services/consumir-api-pokemo.service
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
   faSearch = faSearch;
   nombre: string = '';
   clic: boolean = false;
+  keyword = 'nombre';
   nombrePokemon: string | undefined;
+  arregloPokemons: any; //hay que cambiar este tipo
 
   constructor(private consumirApiPokemoService: ConsumirApiPokemoService) {}
 
@@ -32,6 +35,9 @@ export class AppComponent {
       this.nombre = '';
     }
     this.clic = true;
+    this.arregloPokemons = this.consumirApiPokemoService.nombresPokemons;
     this.consumirApiPokemoService.notifador.next(this.nombrePokemon);
   }
+
+
 }

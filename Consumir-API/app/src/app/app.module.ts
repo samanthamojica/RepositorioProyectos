@@ -10,6 +10,7 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { BuscarPokemonComponent } from './busquedaPokemons/buscar-pokemon/buscar-pokemon.component';
 import { FooterComponent } from './footer/footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    
     
   ],
   providers: [],

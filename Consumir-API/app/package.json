@@ -23,6 +23,7 @@
         "@fortawesome/fontawesome-svg-core": "^6.4.2",
         "@fortawesome/free-brands-svg-icons": "^6.4.2",
         "@fortawesome/free-solid-svg-icons": "^6.4.2",
+        "angular-ng-autocomplete": "^2.0.12",
         "bootstrap": "^5.3.2",
         "jquery": "^3.7.1",
         "popper.js": "^1.16.1",
