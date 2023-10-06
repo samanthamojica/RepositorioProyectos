@@ -1,0 +1,18 @@
+Proyecto que maneja la información de una Escuela, tiene los apartado de
+Alumno, Maestro, Materia y Clase.
+En cada uno de los partados puedes realizar Altas, Bajas, Consultas y Modificaciones.
+
+Front-End: 
+
+Angular
+TypeScript
+HTML
+CSS
+BOOTSTRAP
+
+Back-End
+Spring Boot
+
+Base de Datos:
+MySQL
+Alojada en AWS
