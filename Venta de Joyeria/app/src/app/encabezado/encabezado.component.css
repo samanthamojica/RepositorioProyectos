@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    /*  background-color: #EDB5D2; */
+}
+
+.barraDeColor {
+    background-color: #CDB5D2;
+    width: 100vw;
+    height: 2vw;
+}
+
+.menu {
+    /* background-color: rgb(39, 86, 185); */
+    background-color: #edb5d2;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.imagenNombre {
+    background-color: #edb5d2;
+    /*   background-color: yellowgreen; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+.menuPrincipal {
+    /*  background-color: rgb(218, 15, 15); */
+    background-color: #edb5d2;
+    padding: 15px;
+}
+
+.menu {
+    padding: 15px;
+    display: inline;
+}

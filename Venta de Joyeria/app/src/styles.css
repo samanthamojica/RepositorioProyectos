@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF5E9;
+    background-color: rgba( 255, 245, 233, 0.4);
+    margin: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
