@@ -1,0 +1,23 @@
+<form (submit)=" f.form.valid && agregarmonto() " #f="ngForm" ngNativeValidate>
+    <div class="agregar">
+        <div class="agregar_contenedor">
+            <select class="agregar_tipo" [(ngModel)]="valor" name="valor" [class.redfocus]="valor == 'egr'">
+                <option value="ing" name="ing" selected>+</option>
+                <option value="egr">-</option>
+            </select>
+
+            <ng-template [ngIf]="valor == 'ing'">
+                <input type="text" [(ngModel)]="conceptoI" name="conceptoIng " class="agregar_descripcion " placeholder="Agregar Descripción" required>
+                <input type="number" class="agregar_valor" placeholder="Valor" name="conceptoIng" [(ngModel)]="montoI" required>
+                <button class="agregar_btn "><i class="ion-ios-checkmark-outline "></i></button>
+            </ng-template>
+
+            <ng-template [ngIf]="valor == 'egr'">
+                <input [class.redfocus]="valor == 'egr'" type="text " [(ngModel)]="conceptoG " name="conceptoG " class="agregar_descripcion " placeholder="Agregar Descripción " required>
+                <input [class.redfocus]="valor == 'egr'" type="number" class="agregar_valor" placeholder="Valor" name="montoG" [(ngModel)]="montoG" required>
+                <button class="agregar_btn ">
+                    <i [class.red]="valor == 'egr'" class="ion-ios-checkmark-outline"></i></button>
+            </ng-template>
+        </div>
+    </div>
+</form>

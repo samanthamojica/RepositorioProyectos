@@ -1,0 +1,15 @@
+<div class="ingreso">
+    <h2 class="ingreso_titulo">Ingresos</h2>
+    <div class="elemento limpiarEstilos" *ngFor="let ingreso of ingresos; let i=index">
+        <div class="elemento_descripcion">{{i+1}}.- {{ingreso.concepto}} </div>
+        <div class="right limpiarEstilos"> {{ingreso.monto | currency:'MXN' : '$' : '1.2-2'}}
+            <div class="elemento_valor"></div>
+            <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn"> eliminar
+                    <!-- <i class="icon ion-ios-alarm-outline" (click)="elimIng(ingreso)"></i> -->
+                    <i class="ion-ios-close-outline" (click)="elimIng(ingreso)"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
