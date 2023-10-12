@@ -9,9 +9,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import { PrincipalComponent } from './principal/principal.component';
 
 @NgModule({
-  declarations: [AppComponent, EncabezadoComponent],
+  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

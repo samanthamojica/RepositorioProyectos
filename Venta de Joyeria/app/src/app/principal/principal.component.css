@@ -1,0 +1,53 @@
+    * {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    
+    body {
+        /*  background-color: cadetblue; */
+        height: auto;
+    }
+    
+    .contenedor-fondo {
+        background-color: #EAD2DF;
+        width: 60vw;
+        height: 40vh;
+        padding: 15px;
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    .fondoClaro {
+        background-color: turquoise;
+        width: 30vw;
+        margin: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .fondoFotografia {
+        background-color: violet;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 3%;
+        margin-bottom: 2%;
+        width: 20vw;
+        background-image: url('/assets/aretesLargos/aretes4.png');
+        padding: 15px;
+        margin-left: -5%;
+        z-index: 2;
+    }
+    /******************************************TEXTO  */
+    
+    .contenedor-fondo .fondoClaro .texto p {
+        background-color: tomato;
+        width: 20vw;
+        position: absolute;
+        color: aliceblue;
+        font-family: 'Courier New', Courier, monospace;
+        margin-left: -10%;
+        font-size: medium;
+        margin-top: 10%;
+    }
