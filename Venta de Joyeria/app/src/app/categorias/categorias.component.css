@@ -1,0 +1,19 @@
+.contenedorCategorias {
+    background-color: rgba(237, 181, 210, 0.3);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.imagen {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(234, 210, 223, 0.7);
+}
+
+.imagen img {
+    width: 35vw;
+    height: auto;
+}

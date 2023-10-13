@@ -5,7 +5,6 @@
     }
     
     body {
-        /*  background-color: cadetblue; */
         height: auto;
     }
     
@@ -19,7 +18,7 @@
     }
     
     .fondoClaro {
-        background-color: turquoise;
+        background-color: rgba(200, 168, 218, 0.5);
         width: 30vw;
         margin: 5px;
         position: relative;
@@ -42,12 +41,14 @@
     /******************************************TEXTO  */
     
     .contenedor-fondo .fondoClaro .texto p {
-        background-color: tomato;
+        /* background-color: tomato; */
         width: 20vw;
         position: absolute;
-        color: aliceblue;
+        color: #fff5e9;
         font-family: 'Courier New', Courier, monospace;
         margin-left: -10%;
         font-size: medium;
         margin-top: 10%;
+        text-align: center;
+        line-height: 1.5;
     }

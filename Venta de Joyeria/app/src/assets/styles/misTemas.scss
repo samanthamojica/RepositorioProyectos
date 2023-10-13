@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+//Definir gama de colores
+$morado: ( 50: #f8f5fb, 100: #efe5f4, 200: #e4d4ed, 300: #d9c2e5, 400: #d0b5e0, 500: #c8a8da, 600: #c2a0d6, 700: #bb97d0, 800: #b48dcb, 900: #a77dc2, A100: #ffffff, A200: #ffffff, A400: #f4e2ff, A700: #eac9ff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #000000, 900: #000000, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+$rosa: ( 50: #fdf6fa, 100: #fae9f2, 200: #f6dae9, 300: #f2cbe0, 400: #f0c0d9, 500: #edb5d2, 600: #ebaecd, 700: #e8a5c7, 800: #e59dc1, 900: #e08db6, A100: #ffffff, A200: #ffffff, A400: #ffffff, A700: #fff5fa, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #000000, 900: #000000, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+$rosaClaro: ( 50: #fcfafb, 100: #f9f2f5, 200: #f5e9ef, 300: #f0e0e9, 400: #edd9e4, 500: #ead2df, 600: #e7cddb, 700: #e4c7d7, 800: #e1c1d2, 900: #dbb6ca, A100: #ffffff, A200: #ffffff, A400: #ffffff, A700: #ffffff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #000000, 900: #000000, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+//Paleta de colores
+$primary :mat.define-palette($morado);
+$accent: mat.define-palette($rosa);
+$warn: mat.define-palette($rosaClaro);
+//Tema propio
+$theme: mat.define-light-theme(( color: (primary: $primary, accent: $accent, warn: $warn)));
+$color-config: mat.get-color-config($theme);
+$primary-palette: map.get($color-config, 'primary');
+$accent-palette: map.get($color-config, 'accent');
+$warn-palette: map.get($color-config, 'warn');
+$is-dark-theme: map.get($color-config, 'is-dark');
+//implementando el tema
+@include mat.all-component-themes($theme);

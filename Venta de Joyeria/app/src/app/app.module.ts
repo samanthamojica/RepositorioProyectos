@@ -10,9 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { PrincipalComponent } from './principal/principal.component';
+import { CategoriasComponent } from './categorias/categorias.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
-  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent],
+  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +23,9 @@ import { PrincipalComponent } from './principal/principal.component';
     MatSlideToggleModule,
     MatButtonModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,8 +8,5 @@
 
 body {
     background-color: #FFF5E9;
-    background-color: rgba( 255, 245, 233, 0.4);
     margin: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
