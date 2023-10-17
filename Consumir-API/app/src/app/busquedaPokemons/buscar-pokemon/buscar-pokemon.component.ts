@@ -64,8 +64,7 @@ export class BuscarPokemonComponent {
         });
         debugger
     } else {
-      /* debugger; */
-      if (!this.band) {
+           if (!this.band) {
         console.log('Ingrese un nombre valido');
         this.bandError = false;
       }

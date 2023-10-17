@@ -1,38 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <app-encabezado></app-encabezado>
-
-    <div class="imagenPrincipal">
-        <img src="/assets/Imagenes/pikachu.png">
-    </div>
-
-    <div class="contenedorBusqueda">
-        <h3>Busca un Pokemon</h3>
-        <p>Ingresa el nombre del Pokemon que quieres buscar</p>
-        <div class="search">
-            <input type="text" class="input" placeholder="Buscar..." [(ngModel)]="nombre">
-            <button class=" btn " (click)="navegarToBuscarPokemon() " id="inputBoton ">
-                <fa-icon [icon]="faSearch"></fa-icon>
-            </button>
-        </div>
-    </div>
-
-    <app-buscar-pokemon [nombrePokemon]="nombrePokemon" *ngIf="nombrePokemon != ''"></app-buscar-pokemon>
-
-    <app-footer></app-footer>
-</body>
-
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,16 +19,6 @@
         <p>Ingresa el nombre del Pokemon que quieres buscar</p>
         <div class="search">
             <input type="text" class="input" placeholder="Buscar..." [(ngModel)]="nombre">
-            <!--  <ng-autocomplete [data]="arregloPokemons" [searchKeyword]="nombre" placeholder="Buscar... " (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' historyIdentifier="countries" [itemTemplate]="itemTemplate"
-                [notFoundTemplate]="notFoundTemplate">
-            </ng-autocomplete>
-            <ng-template #itemTemplate let-item>
-                <a [innerHTML]="item.name"></a>
-            </ng-template>
-            <ng-template #notFoundTemplate let-notFound>
-                <div [innerHTML]="notFound"></div>
-            </ng-template> -->
-
             <button class=" btn " (click)="navegarToBuscarPokemon() " id="inputBoton ">
                 <fa-icon [icon]="faSearch"></fa-icon>
             </button>

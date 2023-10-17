@@ -10,24 +10,15 @@
                      }
                      
                      .contenedorPokemons .imagenPokemon {
-                         /*    /*  background-color: tomato; */
                          width: 50vw;
                          overflow: hidden;
                          display: flex;
                          justify-content: center;
                          align-items: center;
                          padding: 15px;
-                         /*   background-size: cover;
-                         background-position: center; */
-                         /*  background-repeat: no-repeat; */
                      }
-                     /*  .contenedorPokemons .imagenPokemon img {
-                         background-color: red;
-                         display: inline;
-                     } */
                      
                      .informacionPokemon {
-                         /*   background-color: blue; */
                          text-align: left;
                          display: flex;
                          flex-direction: column;
