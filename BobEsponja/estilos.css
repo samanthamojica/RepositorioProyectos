@@ -1,5 +1,16 @@
             body {
-                background-color: #2B235C;
+                background-image: url('FondoDelMar.png');
+                /* background-repeat: no-repeat; */
+                width: 100vw;
+            }
+            
+            .contenedor {
+                width: 100vw;
+                /* background-color: yellow; */
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             
             .circulo {
