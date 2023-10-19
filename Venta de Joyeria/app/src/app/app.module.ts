@@ -13,9 +13,13 @@ import { PrincipalComponent } from './principal/principal.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
+import { AnillosComponent } from './anillos/anillos.component';
+import { PulserasComponent } from './pulseras/pulseras.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent],
+  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent, AnillosComponent, PulserasComponent, InicioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +31,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTabsModule,
     MatDividerModule
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })
