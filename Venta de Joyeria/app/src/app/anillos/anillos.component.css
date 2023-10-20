@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    background-color: turquoise;
+    display: flex;
+    flex-direction: row;
+}
+
+.buscador {
+    background-color: yellow;
+    width: 35vw;
+}
+
+.anillo {
+    background-color: violet;
+    width: 65vw;
+}

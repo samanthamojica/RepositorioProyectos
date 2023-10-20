@@ -1,0 +1,12 @@
+.contenedorFooter {
+    margin-top: 50px;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+}
+
+.contenedorFooter .imagen img {
+    background-color: yellow;
+    width: 5vw;
+}

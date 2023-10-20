@@ -17,9 +17,12 @@ import { AnillosComponent } from './anillos/anillos.component';
 import { PulserasComponent } from './pulseras/pulseras.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { RouterModule } from '@angular/router';
+import { AretesComponent } from './aretes/aretes.component';
+import { MasVendidosComponent } from './mas-vendidos/mas-vendidos.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent, AnillosComponent, PulserasComponent, InicioComponent],
+  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent, AnillosComponent, PulserasComponent, InicioComponent, AretesComponent, MasVendidosComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
