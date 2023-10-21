@@ -6,6 +6,7 @@ import { PulserasComponent } from './pulseras/pulseras.component';
 import { AnillosComponent } from './anillos/anillos.component';
 import { AretesComponent } from './aretes/aretes.component';
 import { MasVendidosComponent } from './mas-vendidos/mas-vendidos.component';
+import { AnilloComponent } from './CategoriaAnillos/anillo/anillo.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Anillos', component: AnillosComponent },
   { path: 'Aretes', component: AretesComponent },
   { path: 'MasVendidos', component: MasVendidosComponent },
+  {path: 'Anillo', component : AnilloComponent}
 ];
 
 @NgModule({

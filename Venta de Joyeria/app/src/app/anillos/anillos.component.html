@@ -8,55 +8,81 @@
 </head>
 
 <body>
-
-
     <div class="contenedor">
-        <div class="buscador">
-            <p>Filtros</p>
+        <div class="filtros">
+
             <div class="categorias">
                 <h5>Categorias</h5>
-                <a href="#">Anillos de promesa</a>
-                <a href="#">Juego de anillos</a>
-                <a href="#">Inspirados en princesas</a> a
+                <ul>
+                    <li><a href="#">Anillos de promesa</a></li>
+                    <li> <a href="#">Juego de anillos</a></li>
+                    <li> <a href="#">Inspirados en princesas</a></li>
+                </ul>
             </div>
 
             <div class="colores">
                 <h5>Colores</h5>
-                <label for="">Rojo</label>
-                <label for="">Dorados</label>
-                <label for="">Plateado</label>
-                <label for="">Verdes</label>
+                <ul class="listaColores">
+                    <li>
+                        <img src="assets/colores/oro.jpg" alt="">
+                        <a href=""><label for="">Oro Amarillo</label></a>
+                    </li>
+                    <li>
+                        <img src="assets/colores/oro-rosa.jpg" alt="">
+                        <a href="#"><label for="">Oro Rosa</label></a>
+                    </li>
+                    <li>
+                        <img src="assets/colores/plata.jpg" alt="">
+                        <a href="#"><label for="">Plateado</label></a>
+                    </li>
+                    <li>
+                        <img src="assets/colores/verde-Esmeralda.jpg" alt="">
+                        <a href="#"><label for="">Verde Esmeralda</label></a>
+                    </li>
+                    <li>
+                        <img src="assets/colores/rosa.jpeg" alt="">
+                        <a href="#"><label for="">Rosa</label></a>
+                    </li>
+                </ul>
+
             </div>
 
             <div class="precio">
                 <h5>Precios</h5>
-                <input type="checkbox"><label for="">$0-50</label>
-                <input type="checkbox"><label for="">$100-150</label>
-                <input type="checkbox"><label for="">$150-200</label>
-                <input type="checkbox"><label for="">$200-250</label>
+                <section class="example-section">
+                    <mat-radio-group>
+                        <ul>
+                            <li>
+                                <mat-radio-button class="example-margin" value="after">$0-50</mat-radio-button>
+                            </li>
+                            <li>
+                                <mat-radio-button class="example-margin" value="after">$100-150</mat-radio-button>
+                            </li>
+                            <li>
+                                <mat-radio-button class="example-margin" value="after">$150-200</mat-radio-button>
+                            </li>
+                            <li>
+                                <mat-radio-button class="example-margin" value="after">$200-250</mat-radio-button>
+                            </li>
+                        </ul>
+                    </mat-radio-group>
+                </section>
+
             </div>
-
-        </div>
-        <div class="anillo">
-            <!-- <div class="anillo" *ngFor="let item of arregloAnillos">
-                <p>Nombre: {{item.nombreAnillo}}</p>
-                <p>Descripcion: {{item.descripcion}}</p>
-                <p>Precio: {{item.precio}}</p>
-                <p>Colores Disponibles: {{item.coloresDisponibles}}</p>
-            </div> -->
-            <!--  <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div> -->
-
         </div>
 
+        <div class="anillos">
+            <div class="card anillo" style="width: 18rem;" *ngFor="let item of arregloAnillos">
+                <a href="Anillo"><img class="card-img-top" src="{{item.urlImagen}}" alt="Card image cap"></a>
+                <a href="Anillo">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.nombreAnillo}}</h5>
+                        <p class="card-text"> {{item.descripcion}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>

@@ -1,19 +1,92 @@
-* {
-    box-sizing: border-box;
-}
-
-.contenedor {
-    background-color: turquoise;
-    display: flex;
-    flex-direction: row;
-}
-
-.buscador {
-    background-color: yellow;
-    width: 35vw;
-}
-
-.anillo {
-    background-color: violet;
-    width: 65vw;
-}
+            * {
+                box-sizing: border-box;
+            }
+            
+            .contenedor {
+                display: flex;
+                flex-direction: row;
+            }
+            /* ************************************Filtros */
+            
+            .filtros {
+                width: 35vw;
+                margin: 10px;
+                overflow: hidden;
+                background-color: #ffe5c0;
+                /*  position: fixed; */
+            }
+            
+            .filtros .categorias {
+                margin: 15px;
+                padding: 15px;
+            }
+            
+            .filtros h5 {
+                color: #C8A8DA;
+            }
+            
+            .filtros .categorias ul li a {
+                text-decoration: none;
+                color: #C8A8DA;
+                line-height: 2.5;
+            }
+            
+            .filtros .categorias ul {
+                list-style-type: none;
+            }
+            /* *******************************************PRECIOS */
+            
+            .filtros .precio {
+                margin: 15px;
+                padding: 15px;
+            }
+            
+            .filtros .precio .example-section ul li {
+                list-style-type: none;
+                color: #C8A8DA;
+            }
+            /* ***********************************************COLORES */
+            
+            .filtros .colores {
+                /*     background-color: violet;*/
+                margin: 15px;
+                padding: 15px;
+            }
+            
+            .filtros .colores .listaColores img {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                margin: 5px;
+            }
+            
+            .filtros .colores .listaColores li {
+                line-height: 2.5;
+                list-style-type: none;
+                color: #C8A8DA;
+            }
+            /* ***************************************************ANILLOS  */
+            
+            .contenedor .anillos {
+                width: 65vw;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 15px;
+            }
+            
+            .contenedor .anillos .card {
+                text-decoration: none;
+                margin: 20px;
+                background-color: #fff5e9;
+            }
+            
+            .contenedor .anillos .card a {
+                text-decoration: none;
+                color: #C8A8DA;
+            }
+            
+            .contenedor .anillos .card a:hover img {
+                transform: scale(0.99);
+            }

@@ -20,9 +20,12 @@ import { RouterModule } from '@angular/router';
 import { AretesComponent } from './aretes/aretes.component';
 import { MasVendidosComponent } from './mas-vendidos/mas-vendidos.component';
 import { FooterComponent } from './footer/footer.component';
+import { AnilloComponent } from './CategoriaAnillos/anillo/anillo.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { FormControl } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent, AnillosComponent, PulserasComponent, InicioComponent, AretesComponent, MasVendidosComponent, FooterComponent],
+  declarations: [AppComponent, EncabezadoComponent, PrincipalComponent, CategoriasComponent, AnillosComponent, PulserasComponent, InicioComponent, AretesComponent, MasVendidosComponent, FooterComponent, AnilloComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,7 +35,9 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatIconModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule,
+    /* FormControl */
   ],
   exports: [RouterModule],
   providers: [],
