@@ -12,8 +12,7 @@
                 width: 35vw;
                 margin: 10px;
                 overflow: hidden;
-                background-color: #ffe5c0;
-                /*  position: fixed; */
+                background-color: rgba(200, 168, 218, 0.2);
             }
             
             .filtros .categorias {
@@ -22,12 +21,13 @@
             }
             
             .filtros h5 {
-                color: #C8A8DA;
+                color: rgb(160, 128, 178);
             }
+            /* *************************************CATEGORIAS */
             
             .filtros .categorias ul li a {
                 text-decoration: none;
-                color: #C8A8DA;
+                color: rgb(160, 128, 178);
                 line-height: 2.5;
             }
             
@@ -43,12 +43,11 @@
             
             .filtros .precio .example-section ul li {
                 list-style-type: none;
-                color: #C8A8DA;
+                color: rgb(160, 128, 178);
             }
             /* ***********************************************COLORES */
             
             .filtros .colores {
-                /*     background-color: violet;*/
                 margin: 15px;
                 padding: 15px;
             }
@@ -63,7 +62,15 @@
             .filtros .colores .listaColores li {
                 line-height: 2.5;
                 list-style-type: none;
-                color: #C8A8DA;
+            }
+            
+            .filtros .colores .listaColores li a {
+                text-decoration: none;
+                color: rgb(160, 128, 178);
+            }
+            
+            .filtros .colores .listaColores li a:hover {
+                font-size: 17px;
             }
             /* ***************************************************ANILLOS  */
             
@@ -84,7 +91,7 @@
             
             .contenedor .anillos .card a {
                 text-decoration: none;
-                color: #C8A8DA;
+                color: rgb(160, 128, 178);
             }
             
             .contenedor .anillos .card a:hover img {

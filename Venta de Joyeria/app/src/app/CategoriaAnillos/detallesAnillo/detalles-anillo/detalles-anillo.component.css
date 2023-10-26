@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor .imagen {
+    width: 60vw;
+    padding: 15px;
+    background-color: yellow;
+}
+
+.contenedor .caracteristicas {
+    background-color: yellowgreen;
+    width: 40vw;
+    padding: 15px;
+}
+
+.contenedor .caracteristicas h3 {
+    background-color: turquoise;
+}
