@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'Anillos', component: AnillosComponent },
   { path: 'Aretes', component: AretesComponent },
   { path: 'MasVendidos', component: MasVendidosComponent },
-  {path: 'Anillo', component : DetallesAnilloComponent}
+  {path: 'Anillos/Anillo/:idAlumno', component : DetallesAnilloComponent}
 ];
 
 @NgModule({
