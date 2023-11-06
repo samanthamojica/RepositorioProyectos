@@ -24,6 +24,10 @@ import { MatRadioModule } from '@angular/material/radio';
 
 import { DetallesAnilloComponent } from './CategoriaAnillos/detallesAnillo/detalles-anillo/detalles-anillo.component';
 
+import { PrincipalEmpleadoComponent } from './Empleado/Principal/principal-empleado/principal-empleado.component';
+import { IniciarSesionEmpleadoComponent } from './Empleado/InicioDeSesion/iniciar-sesion-empleado/iniciar-sesion-empleado.component';
+import { AltaArticuloComponent } from './Empleado/alta-articulo/alta-articulo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +41,10 @@ import { DetallesAnilloComponent } from './CategoriaAnillos/detallesAnillo/detal
     MasVendidosComponent,
     FooterComponent,
     DetallesAnilloComponent,
+    
+    PrincipalEmpleadoComponent,
+    IniciarSesionEmpleadoComponent,
+    AltaArticuloComponent,
   ],
   imports: [
     BrowserModule,

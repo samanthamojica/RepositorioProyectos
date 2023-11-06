@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="categorias">
+        <div class="anillos">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Anillos
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="Empleado/AgregarArticulo">Agregar</a></li>
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                    <li><a class="dropdown-item" href="#">Busqueda</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="aretes">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Aretes
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Agregar</a></li>
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                    <li><a class="dropdown-item" href="#">Busqueda</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pulseras">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Pulseras
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Agregar</a></li>
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                    <li><a class="dropdown-item" href="#">Busqueda</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="buscador">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</body>
+
+</html>

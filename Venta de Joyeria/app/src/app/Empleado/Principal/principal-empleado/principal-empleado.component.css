@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.categorias {
+    background-color: yellowgreen;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.anillos {
+    background-color: yellow;
+    margin: 25px;
+}
+
+.aretes {
+    background-color: violet;
+    margin: 25px;
+}
+
+.pulseras {
+    background-color: turquoise;
+    margin: 25px;
+}
+
+.buscador {
+    background-color: tomato;
+    display: inline-block;
+    position: absolute;
+    right: 4%;
+    margin-top: 1%;
+}
