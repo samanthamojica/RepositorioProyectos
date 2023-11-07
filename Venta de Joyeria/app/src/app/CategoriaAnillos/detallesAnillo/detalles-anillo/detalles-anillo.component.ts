@@ -14,14 +14,14 @@ export class DetallesAnilloComponent {
   constructor(private anillosService: AnillosService) {}
 
   ngOnInit(): void {
-    debugger
+   /*  debugger
     this.DetallesAnillo = this.anillosService.obtenerInformacionAnillo('A001');
     debugger
-    this.obtenerImagenesCat();
+    this.obtenerImagenesCat(); */
   }
-
+/* 
   obtenerImagenesCat() {
     this.catalogoImagenes = this.DetallesAnillo.catalogoImagenes;
     debugger
-  }
+  } */
 }

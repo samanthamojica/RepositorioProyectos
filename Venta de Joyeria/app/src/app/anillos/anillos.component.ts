@@ -17,8 +17,8 @@ export class AnillosComponent {
              ) {}
 
   ngOnInit(): void {
-    this.arregloAnillos = this.servicioAnillo.anillos;    
-   this.totalAnillos = this.arregloAnillos.length;
+   /*  this.arregloAnillos = this.servicioAnillo.anillos;    
+   this.totalAnillos = this.arregloAnillos.length; */
   }
 
   /* obtenerIdAnillo(idAnillo:string){

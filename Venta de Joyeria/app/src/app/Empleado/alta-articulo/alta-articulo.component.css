@@ -1,7 +1,25 @@
 * {
-    background-color: yellow;
+    box-sizing: border-box;
 }
 
-body {
-    background-color: turquoise;
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
 }
+
+.titulo {
+    text-align: center;
+    margin: 15px;
+}
+
+.formularioAgregar {
+    background-color: violet;
+    /* width: 60vw; */
+    /*  padding: 30px; */
+}
+
+
+/* .elementoForm {
+    margin: 15px;
+} */
