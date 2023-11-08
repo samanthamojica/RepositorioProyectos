@@ -10,19 +10,20 @@ import { AnillosService } from '../../servicios/anillos.service';
 })
 export class AltaArticuloComponent {
   fomularioAlta: FormGroup;
-  nuevoAnillo: Anillo ;
+  nuevoAnillo: Anillo;
+  band : boolean;
 
-  constructor(private formBuilder: FormBuilder,
-              private anillosService :AnillosService    ) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private anillosService: AnillosService
+  ) {}
 
   ngOnInit(): void {
-   
-    this.crearFormulario(); 
+    this.crearFormulario();
   }
 
   crearFormulario() {
     this.fomularioAlta = this.formBuilder.group({
-      idAnillo: [''],
       nombreAnillo: [''],
       descripcion: [''],
       categoria: [''],
@@ -30,19 +31,21 @@ export class AltaArticuloComponent {
     });
   }
 
-  agragarAnillo(){
+  async agragarAnillo() {
     this.nuevoAnillo = this.fomularioAlta.value as Anillo;
-    debugger
-    this.anillosService.guardarAnillo(this.nuevoAnillo).subscribe((anillo)=>{
-      if(anillo){
-        console.log("Se guardo anillo");
-        debugger
-      }else{
-        console.log("No se guardo el anillo");
-      }
-    });
-    this.fomularioAlta.reset();
-
-
+  
+    try {
+      let resultado = await this.anillosService.guardarAnillo(this.nuevoAnillo);
+      debugger
+      console.log(' Se guardo anillo');
+      console.log('respuesta de servidor: ' + resultado);
+      this.band = true;
+      this.fomularioAlta.reset();
+    } catch(error) {
+      debugger
+      console.log("No se guardo el anillo");
+      console.log("respuesta del servidor: "+ error);
+      this.band = false;
+    }
   }
 }

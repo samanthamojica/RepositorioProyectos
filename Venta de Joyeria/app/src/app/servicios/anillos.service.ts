@@ -7,14 +7,30 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AnillosService {
-  anillo : Anillo ;
-  url ='http://localhost:8080/anillos/'
-  constructor(private http:HttpClient) {}
+  anillo: Anillo;
+  url = 'http://localhost:8080/anillos/';
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
-  guardarAnillo(anillo : Anillo):Observable<Anillo>{
-    debugger
-    return this.http.post<Anillo>(this.url+'anillo/', anillo);     
+  /* guardarAnillo(anillo: Anillo): Observable<Anillo> {
+    return this.http.post<Anillo>(this.url + 'anillo/', anillo);
+  } */
+
+  guardarAnillo(anillo: Anillo): Promise<Anillo> {
+    debugger;
+    return this.http
+      .post<Anillo>(this.url + 'anillo/', anillo)
+      .toPromise()
+      .then((data) => {
+        debugger;
+        console.log('servidor: ' + data);
+        return data;
+      })
+      .catch((error) => {
+        debugger;
+        console.log('error en el servidor' + error);
+        throw error;
+      });
   }
 }
