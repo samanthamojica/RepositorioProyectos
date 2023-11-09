@@ -8,7 +8,7 @@ export class Anillo {
     public tipo:string,
     public precio: number,
     public coloresDisponibles: string,
-    public urlImagen:string,
+  /*   public imagen:string, */
     public catalogoImagenes:string[],
     public cantidad: number
   ) {}

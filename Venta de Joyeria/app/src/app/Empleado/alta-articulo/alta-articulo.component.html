@@ -12,7 +12,6 @@
         <div class="titulo">
             <h2>Agregar Anillo</h2>
         </div>
-
         <div class="formularioAgregar">
             <form [formGroup]="fomularioAlta">
                 <div class="elementoForm nombreAnillo ">
@@ -31,40 +30,14 @@
                     <label for=" " class="form-label ">Precio</label>
                     <input type="text " class="form-control " formControlName="precio" name="precio" aria-describedby=" emailHelp ">
                 </div>
-                <button class="btn btn-primary" (click)="agragarAnillo()" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Guardar</button>
-            </form>
-            <!-- Modal Se almaceno correctamente -->
-            <ng-container *ngIf="band">
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">titulo</h5>
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div *ngIf="band == true; else BloqueElse" class="modal-body">
-                                <h3>Informacion almacenada</h3>
-                            </div>
-                            <ng-template #BloqueElse class="modal-body">
-                                <h3> No se almaceno la Informacion</h3>
-                            </ng-template>
-                            <!-- 
-                            <div #BloqueElse>
-
-                            </div> -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="catalogoImagenes">
+                    <label for="" class="form-label">Imagen Principal</label>
+                    <input type="file" multiple="true" accept=".jpeg, .jpg, .png" id="archivo" name="archivo" class="form-control" required name="archivo">
                 </div>
-            </ng-container>
 
-
-
-
+                <br>
+                <button class=" btn btn-primary " (click)="agragarAnillo() ">Guardar</button>
+            </form>
         </div>
     </div>
 </body>

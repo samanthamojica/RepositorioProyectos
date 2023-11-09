@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Anillo } from 'src/app/models/anillo';
 import { AnillosService } from '../../servicios/anillos.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAltaComponent } from 'src/app/modal/modal-alta/modal-alta.component';
 
 @Component({
   selector: 'app-alta-articulo',
@@ -11,11 +13,12 @@ import { AnillosService } from '../../servicios/anillos.service';
 export class AltaArticuloComponent {
   fomularioAlta: FormGroup;
   nuevoAnillo: Anillo;
-  band : boolean;
+  band = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private anillosService: AnillosService
+    private anillosService: AnillosService,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -28,24 +31,21 @@ export class AltaArticuloComponent {
       descripcion: [''],
       categoria: [''],
       precio: [''],
+      catalogoImagenes:['']
     });
   }
 
   async agragarAnillo() {
     this.nuevoAnillo = this.fomularioAlta.value as Anillo;
-  
+    const modalRef = this.modalService.open(ModalAltaComponent);
     try {
-      let resultado = await this.anillosService.guardarAnillo(this.nuevoAnillo);
-      debugger
-      console.log(' Se guardo anillo');
-      console.log('respuesta de servidor: ' + resultado);
-      this.band = true;
+      await this.anillosService.guardarAnillo(this.nuevoAnillo);
+      modalRef.componentInstance.mensaje = 'Información almacenada';
+      debugger;
       this.fomularioAlta.reset();
-    } catch(error) {
-      debugger
-      console.log("No se guardo el anillo");
-      console.log("respuesta del servidor: "+ error);
-      this.band = false;
+    } catch (error) {
+      modalRef.componentInstance.mensaje = 'No se pudó guardar la información';
+      debugger;
     }
   }
 }

@@ -26,6 +26,8 @@ import { IniciarSesionEmpleadoComponent } from './Empleado/InicioDeSesion/inicia
 import { AltaArticuloComponent } from './Empleado/alta-articulo/alta-articulo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalAltaComponent } from './modal/modal-alta/modal-alta.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     PrincipalEmpleadoComponent,
     IniciarSesionEmpleadoComponent,
     AltaArticuloComponent,
+    ModalAltaComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule
 
   ],
   exports: [RouterModule],

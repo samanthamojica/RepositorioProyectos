@@ -18,18 +18,14 @@ export class AnillosService {
   } */
 
   guardarAnillo(anillo: Anillo): Promise<Anillo> {
-    debugger;
     return this.http
       .post<Anillo>(this.url + 'anillo/', anillo)
       .toPromise()
       .then((data) => {
-        debugger;
-        console.log('servidor: ' + data);
         return data;
       })
       .catch((error) => {
-        debugger;
-        console.log('error en el servidor' + error);
+        /*   console.log('error en el servidor' + error); */
         throw error;
       });
   }
