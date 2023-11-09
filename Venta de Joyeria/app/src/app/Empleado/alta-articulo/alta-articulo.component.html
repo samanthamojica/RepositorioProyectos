@@ -31,10 +31,17 @@
                     <input type="text " class="form-control " formControlName="precio" name="precio" aria-describedby=" emailHelp ">
                 </div>
                 <div class="catalogoImagenes">
-                    <label for="" class="form-label">Imagen Principal</label>
-                    <input type="file" multiple="true" accept=".jpeg, .jpg, .png" id="archivo" name="archivo" class="form-control" required name="archivo">
+                    <label for="" class="form-label">Catalogo Imagenes</label>
+                    <input type="file" multiple="true" accept=".jpeg, .jpg, .png" id="archivo" name="archivo" class="form-control" required name="archivo" (change)="seleccionarImagenes($event)">
+                    <p>Elementos seleccionados: {{cantidadImagenes}}</p>
+                    <div class="imagenesCargadas">
+                        <div class="card" style="width: 18rem;" *ngFor="let imagen of arregloImagenes">
+                            <div class="imagenes">
+                                <img class="card-img-top" [src]="imagen" alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
                 <br>
                 <button class=" btn btn-primary " (click)="agragarAnillo() ">Guardar</button>
             </form>

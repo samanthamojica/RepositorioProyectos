@@ -23,3 +23,13 @@
 .modal-footer {
     background-color: rgba(237, 181, 210, 0.3);
 }
+
+.formularioAgregar .catalogoImagenes .imagenesCargadas {
+    background-color: violet;
+    /*   padding: 15px; */
+    display: flex;
+    flex-direction: row;
+    margin: 45px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
