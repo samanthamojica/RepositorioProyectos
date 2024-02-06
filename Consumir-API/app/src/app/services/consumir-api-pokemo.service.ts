@@ -20,8 +20,6 @@ export class ConsumirApiPokemoService {
 
   getPokemon(nombre: string): Observable<object> {
     this.resultado = this.http.get(this.url + nombre);
-   
     return this.resultado;
   }
-
 }

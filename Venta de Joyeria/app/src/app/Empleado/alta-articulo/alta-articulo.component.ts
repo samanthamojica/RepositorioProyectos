@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, defineInjectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Anillo } from 'src/app/models/anillo';
 import { AnillosService } from '../../servicios/anillos.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalAltaComponent } from 'src/app/modal/modal-alta/modal-alta.component';
 
 @Component({
   selector: 'app-alta-articulo',
@@ -18,7 +17,9 @@ export class AltaArticuloComponent {
   rutaImagen = '/assets/imgNoDisponible.jpg';
   arregloImagenes = [];
   imagen;
-  catalogo: Blob[];
+  catalogo: FileList;
+  archivosSeleccionados: File[];
+  formData = new FormData();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,42 +41,64 @@ export class AltaArticuloComponent {
     });
   }
 
-  seleccionarImagenes(event) {
-    //  debugger
-    /*   console.log(event.target.files); */
-    this.cantidadImagenes = event.target.files.length;
-    //voy a verificar que si tenga imagenes en mi arreglo
-    let imagenes = event.target.files;
-    this.catalogo = event.target.files;
-    // this.nuevoAnillo = event.target.files;
-    if (event.target.files.length > 0) {
-      for (let i = 0; i < event.target.files.length; i++) {
-        //leer el file y cargar la imagen
-        let reader = new FileReader();
-        reader.readAsDataURL(imagenes[i]);
-        //El dataUrl es el que maneja el BLOB, binary large Object
-        reader.onload = (event: any) => {
-          this.rutaImagen = event.target.result;
-          this.arregloImagenes.push(this.rutaImagen);
-          //    debugger
+  onArchivosSeleccionados(event: any) {
+    
+    const archivos = event.files;
+
+    for (let i = 0; i < archivos.length; i++) {
+      debugger
+      const archivo = archivos[i];
+      if (archivo.type.startsWith('image/')) {
+        const lector = new FileReader();
+        lector.onload = (e: any) => {
+          this.arregloImagenes.push(e.target.result);
         };
       }
-      this.imagen = imagenes;
-      //  console.log(this.imagen)
-      //   debugger
     }
 
-    //  debugger;
+    //
+    this.archivosSeleccionados = event.target.files;
+    this.cantidadImagenes = this.archivosSeleccionados.length;
+    for (let i = 0; i < this.archivosSeleccionados.length; i++) {
+      this.formData.append('archivos', this.archivosSeleccionados[i]);
+    }
   }
 
-  async agragarAnillo() {
+  agragarAnillo() {
+    //se van a agregar primero las imagenes
+    this.anillosService
+      .guardarAnillo(this.formData)
+      .subscribe((mapRespuesta) => {
+        if (mapRespuesta) {
+          debugger;
+          this.nuevoAnillo = this.fomularioAlta.value as Anillo;
+        } else {
+          console.log('No se pudo alamacenar la informacion');
+        }
+      });
+
+    /*
+    let formData = new FormData();
+
     this.nuevoAnillo = this.fomularioAlta.value as Anillo;
-    this.nuevoAnillo.catalogoImagenes = this.catalogo;
-    // console.log(this.nuevoAnillo);
-    //debugger;
+    debugger;
+    for (let i = 0; i < this.catalogo.length; i++) {
+      formData.append('catalogoImagenes', this.catalogo.item(i), this.catalogo.item(i).name );
+   
+    }
+    const datos = {
+      categoria: this.nuevoAnillo.categoria.toString(),
+      nombreAnillo: this.nuevoAnillo.nombreAnillo.toString(),
+      descripcion: this.nuevoAnillo.descripcion.toString(),
+      precio: this.nuevoAnillo.precio.toString(),
+      catalogoImagenes: this.catalogo,
+    };
+
+    //formData.append('anillo',  new Blob([JSON.stringify(datos)], { type: 'application/json' })  );
+
     const modalRef = this.modalService.open(ModalAltaComponent);
     try {
-      await this.anillosService.guardarAnillo(this.nuevoAnillo);
+      await this.anillosService.guardarAnillo(formData);
       modalRef.componentInstance.mensaje = 'Información almacenada';
       debugger;
       this.fomularioAlta.reset();
@@ -83,5 +106,7 @@ export class AltaArticuloComponent {
       modalRef.componentInstance.mensaje = 'No se pudó guardar la información';
       debugger;
     }
+
+    */
   }
 }

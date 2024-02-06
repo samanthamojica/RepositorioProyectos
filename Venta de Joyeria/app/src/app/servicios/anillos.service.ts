@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Anillo } from '../models/anillo';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,24 +9,17 @@ import { Observable } from 'rxjs';
 export class AnillosService {
   anillo: Anillo;
   url = 'http://localhost:8080/anillos/';
+
+  
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
-  /* guardarAnillo(anillo: Anillo): Observable<Anillo> {
-    return this.http.post<Anillo>(this.url + 'anillo/', anillo);
-  } */
-
-  guardarAnillo(anillo: Anillo): Promise<Anillo> {
-    return this.http
-      .post<Anillo>(this.url + 'anillo/', anillo)
-      .toPromise()
-      .then((data) => {
-        return data;
-      })
-      .catch((error) => {
-        /*   console.log('error en el servidor' + error); */
-        throw error;
-      });
+   guardarAnillo(file: FormData): Observable<Map<string, string>>{
+    debugger
+    console.log("entro al servicio");
+    return this.http.post<Map<string, string>>('http://localhost:8080/imagenes/subirImagenes' , file);
+    
+   
   }
 }
