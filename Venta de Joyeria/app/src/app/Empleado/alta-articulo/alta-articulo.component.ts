@@ -1,4 +1,4 @@
-import { Component, defineInjectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Anillo } from 'src/app/models/anillo';
 import { AnillosService } from '../../servicios/anillos.service';
@@ -16,7 +16,7 @@ export class AltaArticuloComponent {
   cantidadImagenes: number = 0;
   rutaImagen = '/assets/imgNoDisponible.jpg';
   arregloImagenes = [];
-  imagen;
+  // imagen;
   catalogo: FileList;
   archivosSeleccionados: File[];
   formData = new FormData();
@@ -42,21 +42,24 @@ export class AltaArticuloComponent {
   }
 
   onArchivosSeleccionados(event: any) {
-    
-    const archivos = event.files;
-
+    const archivos = event.target.files;
+    // debugger;
     for (let i = 0; i < archivos.length; i++) {
-      debugger
       const archivo = archivos[i];
       if (archivo.type.startsWith('image/')) {
+        //   debugger
         const lector = new FileReader();
         lector.onload = (e: any) => {
+          //     debugger
           this.arregloImagenes.push(e.target.result);
         };
+        lector.readAsDataURL(archivo);
+        // console.log(this.arregloImagenes);
+        // debugger
       }
     }
 
-    //
+    //Subir archivos a BUCKET S3
     this.archivosSeleccionados = event.target.files;
     this.cantidadImagenes = this.archivosSeleccionados.length;
     for (let i = 0; i < this.archivosSeleccionados.length; i++) {
