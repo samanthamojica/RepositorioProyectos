@@ -8,8 +8,7 @@ export class Anillo {
     public tipo:string,
     public precio: number, // 
     public coloresDisponibles: string,
-   // public catalogoImagenes:Blob[], // 
-   public catalogoImagenes: FileList,
+   public catalogoImagenes: Map<string, string>,
     public cantidad: number
   ) {}
 }

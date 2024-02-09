@@ -20,6 +20,7 @@ export class AltaArticuloComponent {
   catalogo: FileList;
   archivosSeleccionados: File[];
   formData = new FormData();
+  precioNumber: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,19 +44,14 @@ export class AltaArticuloComponent {
 
   onArchivosSeleccionados(event: any) {
     const archivos = event.target.files;
-    // debugger;
     for (let i = 0; i < archivos.length; i++) {
       const archivo = archivos[i];
       if (archivo.type.startsWith('image/')) {
-        //   debugger
         const lector = new FileReader();
         lector.onload = (e: any) => {
-          //     debugger
           this.arregloImagenes.push(e.target.result);
         };
         lector.readAsDataURL(archivo);
-        // console.log(this.arregloImagenes);
-        // debugger
       }
     }
 
@@ -69,20 +65,19 @@ export class AltaArticuloComponent {
 
   agragarAnillo() {
     //se van a agregar primero las imagenes
-    this.anillosService
-      .guardarAnillo(this.formData)
-      .subscribe((mapRespuesta) => {
+    this.anillosService.guardarImagenesAnillo(this.formData).subscribe((mapRespuesta) => {
         if (mapRespuesta) {
-          debugger;
           this.nuevoAnillo = this.fomularioAlta.value as Anillo;
+          this.nuevoAnillo.catalogoImagenes = mapRespuesta;
+          console.log(this.nuevoAnillo);
+          debugger
         } else {
           console.log('No se pudo alamacenar la informacion');
         }
       });
 
     /*
-    let formData = new FormData();
-
+   
     this.nuevoAnillo = this.fomularioAlta.value as Anillo;
     debugger;
     for (let i = 0; i < this.catalogo.length; i++) {
