@@ -1,1 +1,1 @@
-**/NuevaCarpetaParaEliminar
+/Venta-de-Joyeria-Back-End
