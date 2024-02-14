@@ -1,0 +1,24 @@
+.imagen {
+    margin-top: 100px;
+    margin-left: 500px;
+    padding: 10px;
+    left: 100px;
+    width: 300px;
+    position: absolute;
+}
+
+.porNombre {
+    margin-top: 100px;
+    left: 1000px;
+    padding: 10px;
+    width: 300px;
+    position: absolute;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #A188A6;
+}

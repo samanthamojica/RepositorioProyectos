@@ -1,0 +1,39 @@
+<div class="container">
+    <h3 class="titulo mt-5 text-center">Informacion de Maestros</h3>
+</div>
+
+<div class="d-flex justify-content-center margin-top" *ngIf="band == false">
+    <div class="spinner-border" style="width: 4rem; height: 4rem;" role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div class="container mt-5 col-7" *ngIf="band == true">
+    <table class="table table .table-hover ">
+        <thead>
+            <th>#</th>
+            <th>Numero de Cuenta</th>
+            <th>Nombre</th>
+            <th>Tipo de plaza</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maestro of listaMaestros, let i = index">
+                <td class="padding">
+                    <p>{{i+1}}</p>
+                </td>
+                <td class="padding">
+                    <p>{{maestro.cuentaM}}</p>
+                </td>
+                <td class="padding">
+                    {{maestro.nombreMaestro}} {{maestro.apPaternoM}} {{maestro.apPaternoM}}
+                </td>
+                <td>
+                    {{maestro.tipoPlaza}}
+                </td>
+                <td class="padding">
+                    <button class="btn btn-secondary" [routerLink]="['detalles-maestro' , maestro.cuentaM]">Detalles</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>

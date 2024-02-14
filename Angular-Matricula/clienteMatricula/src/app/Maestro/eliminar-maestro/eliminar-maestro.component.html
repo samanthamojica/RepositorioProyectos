@@ -1,0 +1,84 @@
+<div class="container">
+    <h2 class="titulo"> Eliminar Maestro</h2>
+</div>
+
+<div class="container">
+    <div class="numCuenta">
+        <label>Numero de Cuenta:</label>
+        <input type="text" [(ngModel)]="numCuenta">
+        <button class="btn btn-primary" [routerLink]="['/eliminar-maestro', numCuenta]">Buscar</button>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
+<div class="container tabla">
+    <table class="table table-hover col-4">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col ">#</th>
+                <th scope="col ">Nombre</th>
+                <th scope="col ">Apellidos</th>
+                <th scope="col ">Correo</th>
+                <th scope="col ">Numero de Cuenta</th>
+                <th scope="col ">Tipo de Plaza</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maestro of listaMaestros; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{maestro.nombreMaestro}} </td>
+                <td>{{maestro.apPaternoM}}{{maestro.apMaternoM}}</td>
+                <td>{{maestro.emailM}}</td>
+                <td>{{maestro.cuentaM}}</td>
+                <td>{{maestro.tipoPlaza}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="guardarNC(maestro.cuentaM)" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class=" modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel " aria-hidden="true ">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel "></h1>
+                <img src="/assets/iconos/deleteF.png " alt=" ">
+                <button type="button " class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <div *ngIf="band == true" class="eliminado">
+
+                    <h3>Maestro eliminado</h3>
+                </div>
+                <div *ngIf="band == false" class="noEliminado">
+                    <h3>Error al eliminar</h3>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <img src="/assets/iconos/deleteF.png " title="delete ">
+                <h5 class="modal-title " id="exampleModalCenterTitle ">Borrar</h5>
+                <button type="button " class="btn-close " data-bs-dismiss="modal " aria-label="Close "> </button>
+            </div>
+            <div class="modal-body ">
+                Estas seguro que quires borrarlo?
+            </div>
+            <div class="modal-footer ">
+
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" (click)="eliminarMaestro()" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

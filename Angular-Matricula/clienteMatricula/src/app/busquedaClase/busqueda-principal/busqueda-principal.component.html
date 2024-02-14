@@ -1,0 +1,31 @@
+<div class="container">
+    <h3 class="titulo mt-5 text-center">Calendarios Escolares</h3>
+</div>
+<div class="container clase">
+    <a routerLink="busqueda-Todas-las-clases"> <img src="/assets/iconos/calendarMateria.png" alt="busquda por nombre " width="190" height="190"></a>
+    <h4>
+        Calendario General
+    </h4>
+</div>
+<div class="container imagen ">
+    <img src="/assets/iconos/calendarAlumnos.png" alt="busqueda por ID " width="190 " height="190 ">
+    <h4>
+        Calendario de Alumno
+    </h4>
+    <input type="text" name="idAlumno" [(ngModel)]="idAlumno">
+    <button class="btn btn-primary " [routerLink]="['busqueda-alumno-clases', idAlumno]">Buscar</button>
+    <h5>Ingrese Id de Alumno</h5>
+</div>
+
+
+<form [formGroup]="myForm">
+    <div class=" container porNombre ">
+        <img src="/assets/iconos/calendarMaestro.png " alt="busquda por nombre " width="190 " height="190 ">
+        <h4>
+            Calendario de Maestro
+        </h4>
+        <input formControlName="inputGral" type="text" [(ngModel)]="idMaestro">
+        <button class="btn btn-primary" (click)="validarAngNavigate()">Buscar</button>
+        <h5>Ingrese Id de Maestro (Ejemplo: M230400023)</h5>
+    </div>
+</form>

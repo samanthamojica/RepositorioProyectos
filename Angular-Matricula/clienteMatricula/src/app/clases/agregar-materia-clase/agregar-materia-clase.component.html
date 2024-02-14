@@ -1,0 +1,37 @@
+<div class="container">
+    <h5 class="titulo mt-5 text-center"> Seleccionar materia</h5>
+</div>
+
+<div class="container tabla">
+    <table class="table col-4">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Seleccionar Materia</td>
+                <td>
+                    <select name="" id="mySelect" [(ngModel)]="materia">
+                        <option *ngFor="let materias of listaMaterias"> {{materias.idMateria}}-M: {{materias.nombreMateria}}</option>
+                    </select>
+                </td>
+                <td> </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <button class=" btn btn-primary" (click)="agregarMateria()">Guardar</button>
+    </div>
+    <div>
+        <div *ngIf="band == true">
+            <app-inf-guardada-ok></app-inf-guardada-ok>
+
+        </div>
+        <div *ngIf="band == false">
+            <app-inf-no-guardada></app-inf-no-guardada>
+        </div>
+    </div>
+</div>

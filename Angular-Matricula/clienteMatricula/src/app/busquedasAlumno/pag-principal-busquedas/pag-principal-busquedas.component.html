@@ -1,0 +1,19 @@
+<div class="container">
+    <h3 class="titulo mt-5 text-center"> Busqueda de Alumnos</h3>
+</div>
+
+<div class="container imagen">
+    <img src=" ../../../assets/iconos/idAlumno.png " alt="busqueda por ID " width="200 " height="200 ">
+    <h4>
+        Busqueda por Id
+    </h4>
+    <input type="text " name="idAlumno " [(ngModel)]="id ">
+    <button class="btn btn-primary " [routerLink]="[ 'busqueda-id-Alumno', id] ">Buscar</button>
+</div>
+
+<div class="container porNombre ">
+    <img src="/assets/iconos/nombreAlumno.png " alt="busquda por nombre " width="190" height="190">
+    <h4>Busqueda por nombre</h4>
+    <input type="text" [(ngModel)]="nombreAlumno" name="nombre">
+    <button class="btn btn-primary" [routerLink]="['busqueda-por-Nombre', nombreAlumno]">Buscar</button>
+</div>

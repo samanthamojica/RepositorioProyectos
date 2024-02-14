@@ -1,0 +1,48 @@
+<ng-container *ngIf="band == false">
+    <div class="container">
+        <h5> <span>Nombre del Profesor: </span>{{maestro.nombreMaestro}} {{maestro.apPaternoM}} {{maestro.apMaternoM}}</h5>
+        <h5> <span>Cuenta: </span> {{maestro.cuentaM}}</h5>
+        <h5><span>Tipo de plaza: </span> {{maestro.tipoPlaza}}</h5>
+    </div>
+
+
+    <div class="container text-center  ">
+        <div class="row">
+            <div class="col borde dias col-1.5 ">
+                Hora
+            </div>
+            <div class="col borde dias col-1.5 ">
+                Lunes
+            </div>
+            <div class="col borde dias col-1.5 ">
+                Martes
+            </div>
+            <div class="col borde dias col-1.5 ">
+                Miercoles
+            </div>
+            <div class="col borde dias col-1.5 ">
+                Jueves
+            </div>
+            <div class="col borde dias col-1.5 ">
+                Viernes
+            </div>
+            <div class="col borde dias col-1.5 ">
+                Sabado
+            </div>
+        </div>
+        <div class="row" *ngFor="let horario of clasesPorHora">
+            <div class="col col-1.5 margen hora borde">
+                <p>{{horario.hora}} </p>
+            </div>
+            <div *ngFor="let dia of dias" class=" col borde col-1.5 " [ngClass]="dia">
+                <div class="row ">
+                    <div *ngFor="let clase of horario.horarios">
+                        <div *ngIf="clase.dia == dia">
+                            <a class="materia " [routerLink]="[ 'busqueda-materia', clase.idClase] ">{{clase.materia}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

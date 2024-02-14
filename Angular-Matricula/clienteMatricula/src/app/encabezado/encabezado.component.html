@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <nav class="navbar bg-body-tertiary  navbar-light  encabezado">
+            <div class="titulo">
+                <a class="navbar-brand">DesarrolloWeb.sam</a>
+            </div>
+            <div>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary  menu">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                                <li class="nav-item">
+                                    <img src="assets/iconos/pagina-de-inicio.png" alt="" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                                    <!--   <a class="nav-link active" aria-current="page">Inicio</a> -->
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle fondo" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">Alumnos </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" [routerLink]="['agregar-alumno/true']">Agregar</a></li>
+                                        <li><a class="dropdown-item" routerLink="eliminar-alumno" routerLinkActive="router-link-active">Eliminar</a></li>
+                                        <li><a class="dropdown-item" routerLink="editar-alumno" routerLinkActive="router-link-active">Editar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">Maestros</a>
+                                    <ul class="dropdown-menu">
+                                        <li> <a class="dropdown-item " routerLink="agregar-maestro" routerLinkActive="active">Agregar</a> </li>
+                                        <li> <a class="dropdown-item " routerLink="eliminar-maestro">Eliminar</a> </li>
+                                        <li> <a class="dropdown-item " routerLink="editar-maestro">Editar</a> </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" arial-expanded="false">Materias</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" routerLink="agregar-materia">Agregar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" arial-expanded="false">Clases</a>
+                                    <ul class="dropdown-menu">
+                                        <li> <a class=" dropdown-item" routerLink="agregar-clase">Agregar</a> </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" arial-expanded="false">Busqueda</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" routerLink="busquedas-alumno">Alumno</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" routerLink="busqueda-maestro"> Maestro</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" routerLink="busqueda-materia">Materia</a>
+                                        </li>
+                                        <li>
+                                            <a class=" dropdown-item" routerLink="busqueda-clase">Clase</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        <div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

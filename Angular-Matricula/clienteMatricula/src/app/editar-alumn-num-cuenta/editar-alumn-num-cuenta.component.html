@@ -1,0 +1,89 @@
+<div *ngIf="error == true" class="container col-6">
+    <app-error-num-cuenta></app-error-num-cuenta>
+</div>
+
+<div *ngIf="error == false">
+    <div class="mx-auto" style="width: 400px;">
+        <h2>Editar Alumno</h2>
+    </div>
+    <div class="container col-7">
+        <form [formGroup]="formularioEditar">
+            <div class="mb-3">
+                <label class="form-label" for="">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombreAlumno" name="nombreAlumno">
+                <div class="alert alert-danger" *ngIf="formularioEditar.controls['nombreAlumno'].dirty && formularioEditar.controls['nombreAlumno'].invalid">
+                    <h5>
+                        Nombre requerido
+                    </h5>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Apellido paterno</label>
+                <input type="text" class="form-control" formControlName="apellidoPaterno" name="apellidoPaterno">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Apellido materno</label>
+                <input type="text" class="form-control" formControlName="apellidoMaterno" name="apellidoMaterno">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control " formControlName="fechaNacimiento" name="fechaNacimiento">
+                <div class="alert alert-danger" *ngIf="formularioEditar.controls['fechaNacimiento'].dirty && formularioEditar.controls['fechaNacimiento'].invalid">
+                    <h5>
+                        Fecha de nacimiento requerida
+                    </h5>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Correo Electronico</label>
+                <input type="text" class="form-control" formControlName="email" name="email">
+
+                <div *ngIf="formularioEditar.controls['email'].invalid && formularioEditar.controls['email'].dirty">
+                    <div *ngIf="formularioEditar.controls['email'].errors?.['required']" class="alert alert-danger">
+                        <h5>
+                            Correo requerido
+                        </h5>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="formularioEditar.controls['email'].errors?.['email']">
+                        <h5>
+                            Formato incorrecto
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" [disabled]="!formularioEditar.valid" class="btn btn-secondary" (click)="editarAlumno()" data-bs-toggle="modal" data-bs-target="#editar"> Editar </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- ********MODAL******************** -->
+
+    <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="assets/iconos/edit.png" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <div *ngIf="band == true" class="guardado">
+                        <h3 class="editado">Alumno Editado</h3>
+                    </div>
+                    <div *ngIf="band == false" class="noGuardado ">
+                        <h3 class="noEditado">No se pudo editar la informacion</h3>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-primary " data-bs-dismiss="modal" routerLink="/editar-alumno">Regresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

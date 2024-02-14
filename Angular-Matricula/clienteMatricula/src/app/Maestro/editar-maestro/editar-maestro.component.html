@@ -1,0 +1,39 @@
+<div class="container">
+    <h2 class="titulo"> Editar Maestro</h2>
+</div>
+
+<div class="container">
+    <div class="numCuenta">
+        <label>Numero de Cuenta:</label>
+        <input type="text" [(ngModel)]="numCuenta">
+        <button class="btn btn-primary" [routerLink]="['/editar-maestro-numCuenta', numCuenta]">Buscar</button>
+    </div>
+</div>
+<div class="container tabla">
+    <table class="table table-hover col-4">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col ">#</th>
+                <th scope="col ">Nombre</th>
+                <th scope="col ">Apellidos</th>
+                <th scope="col ">Correo</th>
+                <th scope="col ">Numero de Cuenta</th>
+                <th scope="col">Tipo de Plaza</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maestro of listaMaestros; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{maestro.nombreMaestro}} </td>
+                <td>{{maestro.apPaternoM}} {{maestro.apMaternoM}}</td>
+                <td>{{maestro.emailM}}</td>
+                <td>{{maestro.cuentaM}}</td>
+                <td>{{maestro.tipoPlaza}}</td>
+                <td>
+                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editarMaestro(maestro)">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

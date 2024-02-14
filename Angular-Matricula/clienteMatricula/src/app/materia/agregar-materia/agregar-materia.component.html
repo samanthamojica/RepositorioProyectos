@@ -1,0 +1,45 @@
+<div class="titulo text-center">
+    <h2>{{titulo}}</h2>
+</div>
+<div class="container col-7">
+    <form [formGroup]="formularioRegistro">
+        <div class=" mb-3 ">
+            <label for=" " class="form-label ">Nombre de materia</label>
+            <input type="text " class="form-control " formControlName="nombreMateria" name="nombreMateria" id=" ">
+            <div *ngIf="formularioRegistro.controls[ 'nombreMateria'].invalid && formularioRegistro.controls[ 'nombreMateria'].dirty " class="alert alert-danger " role="alert ">
+                <p> Nombre de materia requerido</p>
+            </div>
+        </div>
+        <div class="mb-3 ">
+            <label for=" " class="form-label ">Grado</label>
+            <input type="number " min="1 " max="10 " class="form-control " formControlName="gradoMateria" name="gradoMateria" id=" ">
+            <div *ngIf="formularioRegistro.controls[ 'gradoMateria'].errors?.[ 'required'] && formularioRegistro.controls[ 'gradoMateria'].dirty ">
+
+            </div>
+        </div>
+
+        <button type="submit " [disabled]="!formularioRegistro.valid" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar" (click)="agregarMatricula()">Guardar</button>
+    </form>
+    <!-- *******MODAL******************** -->
+
+    <div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <img src="/assets/iconos/save.png " alt=" ">
+                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <div *ngIf="band == true" class="guardado">
+                        <h3>Materia almacenada: "{{nombreM}} "</h3>
+                    </div>
+                    <div *ngIf="band == false" class="noGuardado">
+                        <h3>No se pudo almacenar materia</h3>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

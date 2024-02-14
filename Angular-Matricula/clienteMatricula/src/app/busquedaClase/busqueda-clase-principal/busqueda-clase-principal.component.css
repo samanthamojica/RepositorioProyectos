@@ -1,0 +1,78 @@
+                .lunes {
+                    background-color: #FAF8D4;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .martes {
+                    background-color: #EBDCCB;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .miercoles {
+                    background-color: #C3BAAA;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .jueves {
+                    background-color: #91818A;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .viernes {
+                    background-color: #B2A3B5;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .sabado {
+                    background-color: #FFCDB2;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .hora {
+                    background-color: #B5838D;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .borde {
+                    border-radius: 30px;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .dias {
+                    background-color: #9ED0E6;
+                    margin-top: 5px;
+                    padding: 3px;
+                }
+                
+                .margen {
+                    font-weight: bold;
+                }
+                
+                .materia {
+                    display: inline-block;
+                    padding: 10px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: black;
+                }
+                
+                .maestro {
+                    text-decoration: none;
+                    color: black;
+                }
+                
+                a:hover {
+                    color: green;
+                }
+                
+                span {
+                    color: #B5838D;
+                }

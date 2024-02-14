@@ -1,0 +1,91 @@
+<div class="titulo">
+    <h2>{{titulo}}</h2>
+</div>
+<div class="container col-7">
+    <form [formGroup]="formularioRegistro">
+        <div class="mb-3">
+            <label for="" class="form-label">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombreAlumno" name="nombreAlumno" id="" aria-describedby="emailHelp">
+            <div *ngIf="formularioRegistro.controls['nombreAlumno'].invalid &&  formularioRegistro.controls['nombreAlumno'].dirty" class="alert alert-danger" role="alert">
+                <p> Nombre requerido</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Apellido Paterno</label>
+            <input type="text" class="form-control" formControlName="apPaternoA" name="apPaternoA" id="" aria-describedby="emailHelp">
+            <div *ngIf="formularioRegistro.controls['apPaternoA'].errors?.['required'] && formularioRegistro.controls['apPaternoA'].dirty">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="">Apellido Materno</label>
+            <input type="text" class="form-control" formControlName="apMaternoA" id="" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="">Fecha de nacimiento</label>
+            <input type="date" class="form-control" formControlName="fechaNacimientoA" id="" />
+            <i class=""></i>
+            <div *ngIf="formularioRegistro.controls['fechaNacimientoA'].dirty && formularioRegistro.controls['fechaNacimientoA'].invalid" class="alert alert-danger" role="alert">
+                <p> Fecha de nacimiento requerida</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+            <input type="email" class="form-control" formControlName="emailA" id="" aria-describedby="emailHelp">
+
+            <div *ngIf="formularioRegistro.controls['emailA'].invalid && formularioRegistro.controls['emailA'].dirty">
+
+                <div *ngIf="formularioRegistro.controls['emailA'].errors?.['required']" class=" alert alert-danger " role="alert ">
+                    Correo requerido
+                </div>
+                <div *ngIf="formularioRegistro.controls[ 'emailA'].errors?.['email'] " class="alert alert-danger " role="alert ">
+                    Formato invalido
+                </div>
+            </div>
+        </div>
+        <button *ngIf="esNuevo" type="submit" [disabled]="!formularioRegistro.valid" class="btn btn-primary" (click)="agregarAlumno()" data-bs-toggle="modal" data-bs-target="#agregar">Guardar</button>
+        <button *ngIf="!esNuevo" type="submit" [disabled]="!formularioRegistro.valid" class="btn btn-secondary" (click)="editarAlumno()" data-bs-toggle="modal" data-bs-target="#editar"> Editar </button>
+    </form>
+    <!-- 
+*******MODAL******************** -->
+
+    <div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="/assets/iconos/save.png" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <div *ngIf="band == true" class="guardado">
+                        <h3>Alumno almacenado</h3>
+                    </div>
+                    <div *ngIf="band == false" class="noGuardado">
+                        <h3>No se pudo almacenar al Alumno</h3>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <img src="/assets/iconos/edit.png" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div *ngIf="modalEditar == true" class="guardado">
+                    <h3>Alumno editado</h3>
+                </div>
+                <div *ngIf="modalEditar == false">
+                    <h3>No se pudo editar la informacion</h3>
+                </div>
+                <div class=" modal-footer ">
+                    <button type="button " class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/editar-alumno">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

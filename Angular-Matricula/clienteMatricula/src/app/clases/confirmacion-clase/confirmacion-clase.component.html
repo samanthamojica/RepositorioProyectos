@@ -1,0 +1,87 @@
+<div class="container">
+    <h5 class="titulo mt-5 text-center"> Resumen</h5>
+</div>
+
+<div class="container tabla ">
+    <table class="table ">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <div class="col-md-8">
+                    <td class="font-weight-bold">
+                        <h5>Materia:</h5>
+                    </td>
+                    <td>
+                        {{nombreMateria}}
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="col-md-8">
+                    <td>
+                        <h5>
+                            Maestro:
+                        </h5>
+                    </td>
+                    <td>
+                        {{nombreMaestro}}
+                    </td>
+
+                </div>
+
+            </tr>
+
+            <tr>
+                <div class="col-md-8">
+                    <td>
+                        <h5>
+                            Horario:
+                        </h5>
+                    </td>
+                </div>
+                <div class="col-md-8">
+                    <td *ngFor="let horario of listaHorario">
+                        <p>
+                            <span style="font-weight: bold;">Dia:</span> {{horario.dia}}
+                        </p>
+                        <p>
+                            <span style="font-weight: bold;">Hora:</span> {{horario.hora}}
+                        </p>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <div class="col-md-8">
+
+                        <h5>Alumnos seleccionados:</h5>
+                    </div>
+                </td>
+            </tr>
+
+            <tr *ngFor="let alumno of listaAlumnos; let i=index">
+                <td>
+                    {{i+1}}.- <span style="font-weight: bolder"> {{alumno.numCuentaA}} -</span> {{alumno.nombreAlumno}} {{alumno.apPaternoA}} {{alumno.apMaternoA}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-primary boton" (click)="guardarClase()" [disabled]="disable">Guardar Clase</button>
+    </div>
+
+    <div>
+        <div *ngIf="band == true">
+            <app-inf-guardada-ok></app-inf-guardada-ok>
+            <button class="btn btn-secondary boton" routerLink="/">Regresar a Inicio</button>
+        </div>
+        <div *ngIf="band == false">
+            <app-inf-no-guardada></app-inf-no-guardada>
+        </div>
+    </div>

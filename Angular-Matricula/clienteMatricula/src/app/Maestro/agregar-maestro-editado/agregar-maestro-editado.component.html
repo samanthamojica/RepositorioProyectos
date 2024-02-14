@@ -1,0 +1,93 @@
+<div>
+    <div>
+
+        <div class="titulo text-center">
+            <h2> {{titulo}} </h2>
+        </div>
+
+    </div>
+    <div class="container" class="container col-7">
+        <form [formGroup]="formularioMaestro">
+            <div class="mb-3">
+                <label>Nombre</label>
+                <input type="text" class="form-control" formControlName="nombreMaestro" aria-describedby="emailHelp">
+                <div *ngIf="formularioMaestro.controls['nombreMaestro'].invalid && formularioMaestro.controls['nombreMaestro'].dirty" class="alert alert-danger" role="alert">
+                    Nombre requerido
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <label for="">Apellido Paterno</label>
+                <input type="text" class="form-control" formControlName="apPaternoM">
+                <div *ngIf="formularioMaestro.controls['apPaternoM'].invalid && formularioMaestro.controls['apPaternoM'].dirty" class="alert alert-danger" role="alert">
+                    Apellido requerido
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="">Apellido Materno</label>
+                <input type="text" class="form-control" formControlName="apMaternoM">
+                <div *ngIf="formularioMaestro.controls['apMaternoM'].invalid && formularioMaestro.controls['apMaternoM'].dirty " class="alert alert-danger" role="alert">
+                    Apellido requerido
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Fecha de Nacimiento</label>
+                <input type="date" [value]="fechaHoy" class="form-control" formControlName="fechaNacimientoM">
+                <div *ngIf="formularioMaestro.controls['fechaNacimientoM'].invalid &&  formularioMaestro.controls['fechaNacimientoM'].dirty" class="alert alert-danger" role="alert">
+                    Fecha de nacimiento requerido
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="">Tipo de Plaza</label>
+                <select name="tipoDePlaza" id="tipoDePlaza" class="form-select form-control" formControlName="tipoPlaza"> 
+                                 <option *ngFor="let plaza of listaPlazas" [value]="plaza.idTipoDePlaza"  >{{plaza.tipoDePlaza}}</option>                         
+                </select>
+                <div class="alert alert-danger" *ngIf=" formularioMaestro.controls[ 'tipoPlaza'].invalid && formularioMaestro.controls[ 'tipoPlaza'].dirty ">
+                    <p>Tipo de plaza requerido</p>
+                </div>
+            </div>
+
+
+            <div class=" mb-3 ">
+                <label>Correo Electronico</label>
+                <input type="email " class="form-control" formControlName="emailM">
+                <div *ngIf="formularioMaestro.controls[ 'emailM'].invalid && formularioMaestro.controls[ 'emailM'].dirty ">
+                    <div *ngIf=" formularioMaestro.controls[ 'emailM'].errors?.[ 'email'] " class="alert alert-danger " role="alert ">
+                        Formato incorrecto
+                    </div>
+                    <div *ngIf="formularioMaestro.controls[ 'emailM'].errors?.[ 'required'] " class="alert alert-danger " role="alert ">
+                        Correo requerido
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary " [disabled]="!formularioMaestro.valid" (click)="editarMaestro()" data-bs-toggle="modal" data-bs-target="#editar">Editar</button>
+
+        </form>
+    </div>
+
+    <div class="modal fade " id="editar" tabindex="-1 " aria-labelledby="exampleModalLabel" aria-hidden="true ">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <img src="/assets/iconos/save.png " alt=" ">
+                    <button type="button " class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div *ngIf="band==true" class="guardado ">
+                        <p>Maestro editado</p>
+                    </div>
+                    <div *ngIf="band==false" class="noGuardado ">
+                        <h3>No se pudo editar al Maestro</h3>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/editar-maestro">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

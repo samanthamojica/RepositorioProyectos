@@ -1,0 +1,15 @@
+.titulo {
+    color: black;
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.guardado {
+    color: #4C8577;
+    text-align: center;
+    margin-top: 20;
+}

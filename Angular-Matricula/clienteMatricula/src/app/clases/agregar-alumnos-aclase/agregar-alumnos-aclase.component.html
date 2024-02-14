@@ -1,0 +1,48 @@
+<div class="container">
+    <h5 class="titulo mt-5 text-center"> Seleccionar Alumnos</h5>
+</div>
+<!-- <div class="container tabla "> -->
+<table class="table col-5">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let alumno of listaAlumnos; let i=index" class="row d-flex justify-content-center">
+            <td>
+                {{i+1}}
+                <mat-checkbox value="" [(ngModel)]="alumno.statusAlumno" id="" name="">
+                    <span style="font-weight: bold;"> 
+                         {{alumno.numCuentaA}} 
+                    </span>
+                    <span>
+                           - {{alumno.nombreAlumno}}
+                    </span>
+                    <span>
+                        {{alumno.apPaternoA}}
+                    </span>
+                    <span>
+                        {{alumno.apMaternoA}}
+                    </span>
+                </mat-checkbox>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+<div class=" text-center ">
+
+    <button class=" btn btn-primary " (click)="agregarAlumnos() ">Guardar</button>
+</div>
+
+
+<div>
+    <div *ngIf="band == true ">
+        <app-inf-guardada-ok></app-inf-guardada-ok>
+    </div>
+    <div *ngIf="band == false ">
+        <app-inf-no-guardada></app-inf-no-guardada>
+    </div>
+</div>

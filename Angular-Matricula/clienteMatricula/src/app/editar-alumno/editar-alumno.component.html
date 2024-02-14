@@ -1,0 +1,38 @@
+<div class="container">
+    <h2 class="titulo"> Editar Alumno</h2>
+</div>
+
+<div class="container">
+    <div class="numCuenta">
+        <label>Numero de Cuenta:</label>
+        <input type="text" [(ngModel)]="numeroCuenta">
+        <button class="btn btn-primary" [routerLink]="['/editar-alumno-nuCuenta', numeroCuenta]">Buscar</button>
+    </div>
+</div>
+
+<div class="container tabla">
+    <table class="table table-hover col-4">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col ">#</th>
+                <th scope="col ">Nombre</th>
+                <th scope="col ">Apellidos</th>
+                <th scope="col ">Correo</th>
+                <th scope="col ">Numero de Cuenta</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let alumno of listaAlumos; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{alumno.nombreAlumno}}</td>
+                <td>{{alumno.apPaternoA}} {{alumno.apMaternoA}}</td>
+                <td>{{alumno.emailA}}</td>
+                <td>{{alumno.numCuentaA}}</td>
+                <td>
+                    <button class="btn btn-secondary" (click)="editarAlumno(alumno)">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

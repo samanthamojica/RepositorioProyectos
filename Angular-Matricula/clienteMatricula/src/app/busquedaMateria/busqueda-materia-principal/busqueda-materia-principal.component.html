@@ -1,0 +1,10 @@
+<div class="container">
+    <h3 class="titulo mt-5 text-center"> Busqueda de Materia</h3>
+</div>
+
+<div class="container porNombre text-center">
+    <img src=" /assets/iconos/idMateria.png " alt="busqueda por nombre " width="190 " height="190 ">
+    <h4>Busqueda por nombre</h4>
+    <input type="text " name="nombre" [(ngModel)]="nombreMateria">
+    <button class="btn btn-primary" [routerLink]="['busqueda-materia-por-nombre', nombreMateria]">Buscar</button>
+</div>

@@ -1,0 +1,8 @@
+<div class="container" *ngIf="idCuenta != undefined">
+    <h5>Nombre del alumno: <span>{{alumno.nombreAlumno}} {{alumno.apPaternoA}} {{alumno.apMaternoA}}</span></h5>
+    <h5>Numero de cuenta: <span>{{alumno.numCuentaA}}</span> </h5>
+    <h5> Email: <span>{{alumno.emailA}}</span></h5>
+</div>
+<ng-container *ngIf=" clasePorHora.length> 0">
+    <app-imprimir-horario [clasePorHora]="clasePorHora" [dias]="dias" [titulo]="titulo"></app-imprimir-horario>
+</ng-container>

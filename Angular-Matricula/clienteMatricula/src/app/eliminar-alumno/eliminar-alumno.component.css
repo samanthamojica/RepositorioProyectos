@@ -1,0 +1,30 @@
+.eliminado {
+    color: #4C8577;
+    text-align: center;
+    margin-top: 20;
+}
+
+.noEliminado {
+    color: red;
+    text-align: center;
+    margin-top: 20;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.numCuenta {
+    position: absolute;
+    left: 60%;
+}
+
+.tabla {
+    margin-top: 120px;
+}
+
+.imagen {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+}
