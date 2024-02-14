@@ -1,1 +1,1 @@
-/Venta-de-Joyeria-Back-End/NuevaCarpetaParaEliminar
+archivo-Eliminar.txt
