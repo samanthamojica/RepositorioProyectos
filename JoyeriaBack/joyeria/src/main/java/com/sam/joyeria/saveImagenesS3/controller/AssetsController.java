@@ -35,8 +35,7 @@ public class AssetsController {
 	
 	//public Map<String, String> postImagenes(@RequestParam MultipartFile file[]) {
 		public Map<String, String> postImagenes(@RequestPart("archivos") MultipartFile[] archivos) {
-		System.out.println("entro al metodo  postgImagenes");
-		// El metodo putArregloImagenes esta en serviceS3Imagenes.
+			// El metodo putArregloImagenes esta en serviceS3Imagenes.
 		String[] arregloKeys = serviceS3.putArregloImagenes(archivos);
 		// System.out.println(arregloKeys);
 		Map<String, String> myMap = new HashMap<>();
@@ -73,12 +72,6 @@ public class AssetsController {
 	
 
 	}
-
-	/*
-	@DeleteMapping("/eliminarImagenes")
-	public void deleteObject(@RequestParam String key) {
-		serviceS3.eliminarImagenes(key);
-	}*/
 
 	@DeleteMapping("/eliminarImagenes")
 	public void deleteObject(@RequestParam String key[]) {

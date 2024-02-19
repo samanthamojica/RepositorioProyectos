@@ -13,10 +13,10 @@ public class CatalogoAnilloService {
 	
 	
 	public void almacenarImagenes(CatalogoAnillo catalogo) {
-		System.out.println("");
+		//System.out.println("");
 		CatalogoAnillo catalogoRecibido = new CatalogoAnillo();
 		catalogoRecibido = 	catalogoAnilloRepository.save(catalogo);
-		System.out.print("catalogo recibido: " + catalogoRecibido);		
+		//System.out.print("catalogo recibido: " + catalogoRecibido);		
 	}
 
 }

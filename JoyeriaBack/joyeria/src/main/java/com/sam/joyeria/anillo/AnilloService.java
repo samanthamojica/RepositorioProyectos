@@ -33,18 +33,6 @@ public class AnilloService {
 		
 	}
 
-	/*
-	 * public List<Anillo> obtenerListaAnillos() { List<Anillo> listaDeAnillo = new
-	 * ArrayList<Anillo>(); listaDeAnillo = anilloRepository.findAll(); return
-	 * listaDeAnillo; }
-	 * 
-	 * public Anillo obtenerAnillo(Integer id) { return anilloRepository.getOne(id);
-	 * }
-	 * 
-	 * public Anillo actualizarAnillo(Anillo anillo) { return
-	 * anilloRepository.save(anillo); }
-	 * 
-	 * public void eliminarAnillo(Integer id) { anilloRepository.deleteById(id); }
-	 */
+	
 
 }
