@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { DebugElement, Injectable } from '@angular/core';
 import { Anillo } from '../models/anillo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -14,11 +14,13 @@ export class AnillosService {
 
   ngOnInit(): void {}
 
-  guardarImagenesAnillo(file: FormData): Observable<Map<string, string>> {
-    return this.http.post<Map<string, string>>( 'http://localhost:8080/imagenes/subirImagenes',  file );
+  saveImagenesEnBucket(file: FormData): Observable<Map<string, string>> {
+    return this.http.post<Map<string, string>>('http://localhost:8080/imagenes/subirImagenes',  file );
   }
 
-  guardarAnillo(anillo: Anillo): Observable<boolean> {
-    return this.http.post<boolean>('http://localhost:8080/' , anillo);
+  saveAnilloBD(anillo: Anillo): Observable<boolean> {
+    console.log("entro al metodo guardar anillo en BD");
+    debugger
+    return this.http.post<boolean>('http://localhost:8080/anillos/anillo/' , anillo);
   }
 }

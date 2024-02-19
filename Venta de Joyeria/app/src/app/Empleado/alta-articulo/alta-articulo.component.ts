@@ -65,11 +65,14 @@ export class AltaArticuloComponent {
 
   agragarAnillo() {
     //se van a agregar primero las imagenes
-    this.anillosService.guardarImagenesAnillo(this.formData).subscribe((mapRespuesta) => {
+    this.anillosService.saveImagenesEnBucket(this.formData).subscribe((mapRespuesta) => {
         if (mapRespuesta) {
           this.nuevoAnillo = this.fomularioAlta.value as Anillo;
           this.nuevoAnillo.catalogoImagenes = mapRespuesta;
           console.log(this.nuevoAnillo);
+          this.anillosService.saveAnilloBD(this.nuevoAnillo).subscribe((anilloAlmacenado)=>{
+            console.log(anilloAlmacenado);
+          })
           debugger
         } else {
           console.log('No se pudo alamacenar la informacion');
