@@ -19,9 +19,7 @@ public class AnilloRequest {
 	private String descripcion;
 	private String idAnillo;
 	private String nombreAnillo;
-	private Map<String, String>[] catalogoImagenes;
-	
-//	private List< Map<String, String>> catalogoImagenes;
+	private Map<String, String> catalogoImagenes;
 	
 	
 }

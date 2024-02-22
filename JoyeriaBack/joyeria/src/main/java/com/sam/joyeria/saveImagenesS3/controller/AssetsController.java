@@ -34,17 +34,17 @@ public class AssetsController {
 	@PostMapping("/subirImagenes")
 	
 	//public Map<String, String> postImagenes(@RequestParam MultipartFile file[]) {
-		public Map<String, String> postImagenes(@RequestPart("archivos") MultipartFile[] archivos) {
+		public  Map<String, String> postImagenes(@RequestPart("archivos") MultipartFile[] archivos) {
 			// El metodo putArregloImagenes esta en serviceS3Imagenes.
 		String[] arregloKeys = serviceS3.putArregloImagenes(archivos);
-		// System.out.println(arregloKeys);
+		 System.out.println(arregloKeys);
 		Map<String, String> myMap = new HashMap<>();
 		for (int i = 0; i < archivos.length; i++) {
 			// se agrega en el orden: llave, url
 			myMap.put(arregloKeys[i], serviceS3.getObjectUrl(arregloKeys[i]));
 		}
-		// System.out.println(myMap);
-		return myMap;
+		System.out.println(myMap);
+			return myMap;
 	}
 	
 	

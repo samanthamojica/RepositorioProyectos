@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -45,28 +46,20 @@ public class AnilloController {
 	@PostMapping("/anillo/")
 	public void agregarAnilloCont(@RequestBody AnilloRequest anilloRecibido) {
 		Anillo anillo = new Anillo();
-		System.out.println("entro al metodo agregar anillo");
+//		System.out.println("entro al metodo agregar anillo");
 		anillo.setNombreAnillo(anilloRecibido.getNombreAnillo());
 		anillo.setDescripcion(anilloRecibido.getDescripcion());
 		anillo.setPrecio(anilloRecibido.getPrecio());
 		int idAnillo = anilloService.guardarInfoAnillo(anillo);
 		anillo.setIdCatalogo(idAnillo);
 		anilloService.guardarInfoAnillo(anillo);
-		System.out.println(anillo);
-		// Ahora se van a almacenar todas las imagenes
-		Map<String, String>[] arregloDeMaps = new Map[anilloRecibido.getCatalogoImagenes().length];
-		arregloDeMaps = anilloRecibido.getCatalogoImagenes();
-		// System.out.println(map);
-		for (Map<String, String> mapa : arregloDeMaps) {
-			// Iterar sobre las entradas de cada Map
-			for (Map.Entry<String, String> entry : mapa.entrySet()) {
-				CatalogoAnillo catalogoAnillo = new CatalogoAnillo();
-				catalogoAnillo.setIdCatalogo(idAnillo);
-				catalogoAnillo.setLlave(entry.getKey());
-				catalogoAnillo.setUrl(entry.getValue());
-				System.out.println(catalogoAnillo);
-				catalogoAnilloService.almacenarImagenes(catalogoAnillo);
-			}
+		for (Entry<String, String> entry : anilloRecibido.getCatalogoImagenes().entrySet()) {
+			CatalogoAnillo catalogoAnillo = new CatalogoAnillo();
+			catalogoAnillo.setIdCatalogo(idAnillo);
+			catalogoAnillo.setLlave(entry.getKey());
+			catalogoAnillo.setUrl(entry.getValue());
+			// System.out.println(catalogoAnillo);
+			catalogoAnilloService.almacenarImagenes(catalogoAnillo);
 		}
 
 	}
