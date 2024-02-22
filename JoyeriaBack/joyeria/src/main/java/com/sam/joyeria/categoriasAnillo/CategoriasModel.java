@@ -1,4 +1,4 @@
-package com.sam.joyeria.catalogoAnillo.model;
+package com.sam.joyeria.categoriasAnillo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,15 +9,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "CatalogoAnillo")
+@Table(name = "CategoriasAnillo")
 
-public class CatalogoAnillo {
-	
+
+public class CategoriasModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int id;
-	public int idCatalogo;
-	public String llave;
-	public String url;
-	
+	public String nombreCategoria;
+
 }
