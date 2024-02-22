@@ -73,14 +73,12 @@ export class AltaArticuloComponent {
           this.nuevoAnillo.catalogoImagenes = mapRespuesta;
           console.log(typeof this.nuevoAnillo.catalogoImagenes);
           debugger;
-          console.log(this.nuevoAnillo);
-          console.log(
-            '***************************************************************'
-          );
+       //   console.log(this.nuevoAnillo);
+        //  console.log(         '***************************************************************'     );
           this.anillosService
             .saveAnilloBD(this.nuevoAnillo)
             .subscribe((anilloAlmacenado) => {
-              console.log(anilloAlmacenado);
+              //console.log(anilloAlmacenado);
             });
           debugger;
         } else {
@@ -88,35 +86,5 @@ export class AltaArticuloComponent {
         }
       });
 
-    /*
-   
-    this.nuevoAnillo = this.fomularioAlta.value as Anillo;
-    debugger;
-    for (let i = 0; i < this.catalogo.length; i++) {
-      formData.append('catalogoImagenes', this.catalogo.item(i), this.catalogo.item(i).name );
-   
-    }
-    const datos = {
-      categoria: this.nuevoAnillo.categoria.toString(),
-      nombreAnillo: this.nuevoAnillo.nombreAnillo.toString(),
-      descripcion: this.nuevoAnillo.descripcion.toString(),
-      precio: this.nuevoAnillo.precio.toString(),
-      catalogoImagenes: this.catalogo,
-    };
-
-    //formData.append('anillo',  new Blob([JSON.stringify(datos)], { type: 'application/json' })  );
-
-    const modalRef = this.modalService.open(ModalAltaComponent);
-    try {
-      await this.anillosService.guardarAnillo(formData);
-      modalRef.componentInstance.mensaje = 'Información almacenada';
-      debugger;
-      this.fomularioAlta.reset();
-    } catch (error) {
-      modalRef.componentInstance.mensaje = 'No se pudó guardar la información';
-      debugger;
-    }
-
-    */
   }
 }

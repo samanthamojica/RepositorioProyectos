@@ -2,6 +2,7 @@ import { DebugElement, Injectable } from '@angular/core';
 import { Anillo } from '../models/anillo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CategoriasAnillos } from '../models/categorias-anillos';
 
 @Injectable({
   providedIn: 'root',
@@ -23,4 +24,9 @@ export class AnillosService {
     debugger
     return this.http.post<boolean>('http://localhost:8080/anillos/anillo/' , anillo);
   }
+
+obtenerCategoriasAnillos():Observable<CategoriasAnillos>{
+  return this.http.get<CategoriasAnillos>('http://localhost:8080/');
+}
+
 }
