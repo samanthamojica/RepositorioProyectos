@@ -13,7 +13,7 @@ public class CategoriasService {
 	private CategoriasRepository categoriasRepository;
 	
 	public List<CategoriasModel> getCategorias() {
-	//	System.out.println("Entro al servicio de categorias anillos");
+	System.out.println("Entro al servicio de categorias anillos");
 		return categoriasRepository.findAll();
 		
 	}
