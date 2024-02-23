@@ -1,5 +1,8 @@
 package com.sam.joyeria.categoriasAnillo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +21,10 @@ public class CategoriasController {
 	
 	
 	@GetMapping("/obtenerCategorias")
-	public void getCategoriasAnillos() {
-		System.out.println( categoriasService.getCategorias());		
+	public List<CategoriasModel> getCategoriasAnillos() {
+		List<CategoriasModel> lista = new ArrayList<CategoriasModel>();
+		lista.addAll(categoriasService.getCategorias());
+		return lista;
 	}
 
 }

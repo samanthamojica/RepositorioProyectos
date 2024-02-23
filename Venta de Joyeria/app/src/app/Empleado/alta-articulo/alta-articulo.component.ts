@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Anillo } from 'src/app/models/anillo';
 import { AnillosService } from '../../servicios/anillos.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CategoriasAnillosService } from 'src/app/servicios/categorias-anillos.service';
+import { CategoriasAnillos } from 'src/app/models/categorias-anillos';
 
 @Component({
   selector: 'app-alta-articulo',
@@ -21,14 +22,16 @@ export class AltaArticuloComponent {
   archivosSeleccionados: File[];
   formData = new FormData();
   precioNumber: number = 0;
+  arregloCategorias : CategoriasAnillos[];
 
   constructor(
     private formBuilder: FormBuilder,
     private anillosService: AnillosService,
-    private modalService: NgbModal
+    private categoriasAnillosService: CategoriasAnillosService
   ) {}
 
   ngOnInit(): void {
+    this.obtenerCategorias();
     this.crearFormulario();
   }
 
@@ -36,7 +39,7 @@ export class AltaArticuloComponent {
     this.fomularioAlta = this.formBuilder.group({
       nombreAnillo: [''],
       descripcion: [''],
-      categoria: [''],
+     // categoria: [''],
       precio: [''],
       catalogoImagenes: [''],
     });
@@ -63,6 +66,15 @@ export class AltaArticuloComponent {
     }
   }
 
+  obtenerCategorias() {
+    this.categoriasAnillosService.obtenerCategoriasAnillos().subscribe((resultado) => {
+    this.arregloCategorias = resultado;
+    console.log(this.arregloCategorias[0].nombreCategoria);
+    debugger
+      
+    });
+  }
+
   agragarAnillo() {
     //se van a agregar primero las imagenes
     this.anillosService
@@ -73,8 +85,8 @@ export class AltaArticuloComponent {
           this.nuevoAnillo.catalogoImagenes = mapRespuesta;
           console.log(typeof this.nuevoAnillo.catalogoImagenes);
           debugger;
-       //   console.log(this.nuevoAnillo);
-        //  console.log(         '***************************************************************'     );
+          //   console.log(this.nuevoAnillo);
+          //  console.log(         '***************************************************************'     );
           this.anillosService
             .saveAnilloBD(this.nuevoAnillo)
             .subscribe((anilloAlmacenado) => {
@@ -85,6 +97,5 @@ export class AltaArticuloComponent {
           console.log('No se pudo alamacenar la informacion');
         }
       });
-
   }
 }
