@@ -24,9 +24,8 @@
                 </div>
                 <div class="elementoForm categoriaAnillo ">
                     <label for=" " class="form-label ">Categoria</label>
-                    <!--          <input type="text " class="form-control " formControlName="categoria" name="categoria" aria-describedby=" emailHelp "> -->
-                    <select id="" name="categoria">
-                       <option>test</option> 
+                    <select id="" name="categoria" formControlName="categoria">
+                       <option *ngFor="let categorias of arregloCategorias">{{categorias.nombreCategoria}}</option> 
                     </select>
                 </div>
                 <div class="elementoForm precio">
