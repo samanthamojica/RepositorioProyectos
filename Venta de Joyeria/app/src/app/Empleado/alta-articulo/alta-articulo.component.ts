@@ -17,12 +17,11 @@ export class AltaArticuloComponent {
   cantidadImagenes: number = 0;
   rutaImagen = '/assets/imgNoDisponible.jpg';
   arregloImagenes = [];
-  // imagen;
   catalogo: FileList;
   archivosSeleccionados: File[];
   formData = new FormData();
   precioNumber: number = 0;
-  arregloCategorias : CategoriasAnillos[];
+  arregloCategorias: CategoriasAnillos[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,7 +38,7 @@ export class AltaArticuloComponent {
     this.fomularioAlta = this.formBuilder.group({
       nombreAnillo: [''],
       descripcion: [''],
-     // categoria: [''],
+      categoria: [''],
       precio: [''],
       catalogoImagenes: [''],
     });
@@ -67,30 +66,27 @@ export class AltaArticuloComponent {
   }
 
   obtenerCategorias() {
-    this.categoriasAnillosService.obtenerCategoriasAnillos().subscribe((resultado) => {
-    this.arregloCategorias = resultado;
-    console.log(this.arregloCategorias[0].nombreCategoria);
-    debugger
-      
-    });
+    this.categoriasAnillosService
+      .obtenerCategoriasAnillos()
+      .subscribe((resultado) => {
+        this.arregloCategorias = resultado;
+      });
   }
 
-  agragarAnillo() {
+  agragarAnillo(event: any) {
     //se van a agregar primero las imagenes
     this.anillosService
       .saveImagenesEnBucket(this.formData)
       .subscribe((mapRespuesta) => {
         if (mapRespuesta) {
           this.nuevoAnillo = this.fomularioAlta.value as Anillo;
+          this.nuevoAnillo.categoria = event.target.value;
           this.nuevoAnillo.catalogoImagenes = mapRespuesta;
-          console.log(typeof this.nuevoAnillo.catalogoImagenes);
           debugger;
-          //   console.log(this.nuevoAnillo);
-          //  console.log(         '***************************************************************'     );
           this.anillosService
             .saveAnilloBD(this.nuevoAnillo)
             .subscribe((anilloAlmacenado) => {
-              //console.log(anilloAlmacenado);
+              console.log('Se almaceno correctamente la informacion');
             });
           debugger;
         } else {
