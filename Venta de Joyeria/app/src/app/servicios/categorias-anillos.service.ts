@@ -12,8 +12,6 @@ export class CategoriasAnillosService {
 
   obtenerCategoriasAnillos(): Observable<CategoriasAnillos[]> {
    const r =  this.http.get<CategoriasAnillos[]>('http://localhost:8080/catalogoAnillos/obtenerCategorias');     
-   console.log(r);
-   debugger
    return r;
   }
 }
