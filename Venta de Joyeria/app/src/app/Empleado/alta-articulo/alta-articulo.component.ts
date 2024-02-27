@@ -22,7 +22,7 @@ export class AltaArticuloComponent {
   formData = new FormData();
   precioNumber: number = 0;
   arregloCategorias: CategoriasAnillos[];
-
+ 
   constructor(
     private formBuilder: FormBuilder,
     private anillosService: AnillosService,
@@ -75,17 +75,11 @@ export class AltaArticuloComponent {
 
   agragarAnillo(event: any) {
     //se van a agregar primero las imagenes
-    this.anillosService
-      .saveImagenesEnBucket(this.formData)
-      .subscribe((mapRespuesta) => {
+    this.anillosService.saveImagenesEnBucket(this.formData).subscribe((mapRespuesta) => {
         if (mapRespuesta) {
           this.nuevoAnillo = this.fomularioAlta.value as Anillo;
-          this.nuevoAnillo.categoria = event.target.value;
           this.nuevoAnillo.catalogoImagenes = mapRespuesta;
-          debugger;
-          this.anillosService
-            .saveAnilloBD(this.nuevoAnillo)
-            .subscribe((anilloAlmacenado) => {
+          this.anillosService .saveAnilloBD(this.nuevoAnillo) .subscribe((anilloAlmacenado) => {
               console.log('Se almaceno correctamente la informacion');
             });
           debugger;
