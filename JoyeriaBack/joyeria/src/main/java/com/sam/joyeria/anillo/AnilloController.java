@@ -46,10 +46,11 @@ public class AnilloController {
 	@PostMapping("/anillo/")
 	public void agregarAnilloCont(@RequestBody AnilloRequest anilloRecibido) {
 		Anillo anillo = new Anillo();
-//		System.out.println("entro al metodo agregar anillo");
+		System.out.println("entro al metodo agregar anillo");
 		anillo.setNombreAnillo(anilloRecibido.getNombreAnillo());
 		anillo.setDescripcion(anilloRecibido.getDescripcion());
 		anillo.setPrecio(anilloRecibido.getPrecio());
+		anillo.setIdCategoria(anilloRecibido.getIdCategoria());
 		int idAnillo = anilloService.guardarInfoAnillo(anillo);
 		anillo.setIdCatalogo(idAnillo);
 		anilloService.guardarInfoAnillo(anillo);

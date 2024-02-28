@@ -24,7 +24,7 @@ public class Anillo {
 	//Genera un valor para id, .Identity genera autoincrementable.	
 	private int id;
 	private int precio; 
-	private String categoria;
+	private int idCategoria;
 	private String descripcion;
 	private String idAnillo;
 	private String nombreAnillo;
@@ -58,14 +58,7 @@ public class Anillo {
 		this.precio = precio;
 	}
 
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
+	
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -90,11 +83,7 @@ public class Anillo {
 		this.nombreAnillo = nombreAnillo;
 	}
 
-	@Override
-	public String toString() {
-		return "Anillo [id=" + id + ", precio=" + precio + ", categoria=" + categoria + ", descripcion=" + descripcion
-				+ ", idAnillo=" + idAnillo + ", nombreAnillo=" + nombreAnillo + "]";
-	}
+
 
 	
 	
