@@ -14,9 +14,9 @@
             <div class="categorias">
                 <h5>Categorias</h5>
                 <ul>
-                    <li><a href="#">Anillos de promesa</a></li>
-                    <li> <a href="#">Juego de anillos</a></li>
-                    <li> <a href="#">Inspirados en princesas</a></li>
+                    <li *ngFor="let categoria of aregloCategorias">
+                        <a href="#">{{categoria.nombreCategoria}}</a>
+                    </li>
                 </ul>
             </div>
 
@@ -72,15 +72,15 @@
         </div>
 
         <div class="anillos">
-            <div class="card anillo" style="width: 18rem;" *ngFor="let item of arregloAnillos">
+            <div class="card anillo" style="width: 18rem;">
                 <a routerLink="[Anillo; item.idAnillo">
                     <img class=" card-img-top " src="... " alt="Card image cap ">
                 </a>
                 <a routerLink="[Anillo, item.idAnillo">
                     <div class="card-body ">
-                        <h5 class="card-title ">{{item.nombreAnillo}}</h5>
-                        <p class="card-text "> {{item.descripcion}}</p>
-                        <p>{{item.idAnillo}}</p>
+                        <h5 class="card-title ">Nombre anillo</h5>
+                        <p class="card-text "> descripcion</p>
+                        <p>idAnillo</p>
                     </div>
                 </a>
             </div>
