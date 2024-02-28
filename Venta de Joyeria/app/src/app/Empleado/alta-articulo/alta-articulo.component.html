@@ -24,8 +24,8 @@
                 </div>
                 <div class="elementoForm categoriaAnillo ">
                     <label for=" " class="form-label ">Categoria</label>
-                    <select id="" name="categoria" formControlName="categoria" class="form-control ">
-                       <option *ngFor="let categorias of arregloCategorias" [value]=categorias.idCategoria>{{categorias.nombreCategoria}}</option> 
+                    <select id="" name="idCategoria" formControlName="idCategoria" class="form-control " type="number">
+                       <option *ngFor="let categorias of arregloCategorias" [value]=categorias.idCategoria type="number">{{categorias.nombreCategoria}}</option> 
                     </select>
                 </div>
                 <div class="elementoForm precio">

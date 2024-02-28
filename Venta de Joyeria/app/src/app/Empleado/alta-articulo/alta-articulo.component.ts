@@ -20,7 +20,6 @@ export class AltaArticuloComponent {
   catalogo: FileList;
   archivosSeleccionados: File[];
   formData = new FormData();
-  precioNumber: number = 0;
   arregloCategorias: CategoriasAnillos[];
  
   constructor(
@@ -38,7 +37,7 @@ export class AltaArticuloComponent {
     this.fomularioAlta = this.formBuilder.group({
       nombreAnillo: [''],
       descripcion: [''],
-      categoria: [''],
+      idCategoria: [0],
       precio: [''],
       catalogoImagenes: [''],
     });
@@ -66,11 +65,9 @@ export class AltaArticuloComponent {
   }
 
   obtenerCategorias() {
-    this.categoriasAnillosService
-      .obtenerCategoriasAnillos()
-      .subscribe((resultado) => {
+    this.categoriasAnillosService.obtenerCategoriasAnillos().subscribe((resultado) => {
         this.arregloCategorias = resultado;
-      });
+          });
   }
 
   agragarAnillo(event: any) {
@@ -78,11 +75,15 @@ export class AltaArticuloComponent {
     this.anillosService.saveImagenesEnBucket(this.formData).subscribe((mapRespuesta) => {
         if (mapRespuesta) {
           this.nuevoAnillo = this.fomularioAlta.value as Anillo;
-          this.nuevoAnillo.catalogoImagenes = mapRespuesta;
-          this.anillosService .saveAnilloBD(this.nuevoAnillo) .subscribe((anilloAlmacenado) => {
+          const x : number = Number(this.nuevoAnillo.idCategoria);
+          this.nuevoAnillo.idCategoria = x;
+           this.nuevoAnillo.catalogoImagenes = mapRespuesta;
+             this.anillosService .saveAnilloBD(this.nuevoAnillo) .subscribe((anilloAlmacenado) => {
               console.log('Se almaceno correctamente la informacion');
+              this.fomularioAlta.reset();
+             
             });
-          debugger;
+          
         } else {
           console.log('No se pudo alamacenar la informacion');
         }
