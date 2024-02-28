@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class AnilloRequest {
 	//private int id;
 	private int precio; 
-	private String categoria;
+	private int idCategoria;
 	private String descripcion;
 	private String idAnillo;
 	private String nombreAnillo;
