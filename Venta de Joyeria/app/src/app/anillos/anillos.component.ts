@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AnillosService } from '../servicios/anillos.service';
 import { Anillo } from '../models/anillo';
 import { Router } from '@angular/router';
+import { CategoriasAnillos } from '../models/categorias-anillos';
+import { CategoriasAnillosService } from '../servicios/categorias-anillos.service';
 
 @Component({
   selector: 'app-anillos',
@@ -9,23 +11,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./anillos.component.css'],
 })
 export class AnillosComponent {
-  arregloAnillos: Anillo[] = [];
-  totalAnillos : number = 0;
-  idAnillo : string;
+aregloCategorias: CategoriasAnillos[];
 
-  constructor(private servicioAnillo: AnillosService,
-             ) {}
+  constructor(private servCategoriasAnillo: CategoriasAnillosService ) {}
 
   ngOnInit(): void {
-   /*  this.arregloAnillos = this.servicioAnillo.anillos;    
-   this.totalAnillos = this.arregloAnillos.length; */
+    this.obtenerCategoriasAnillos();
   }
 
-  /* obtenerIdAnillo(idAnillo:string){
-    debugger
-    console.log(idAnillo);
-  //  this.route.navigate(['Anillo',this.idAnillo])
-    debugger
-  } */
+  obtenerCategoriasAnillos(){
+    this.servCategoriasAnillo.obtenerCategoriasAnillos().subscribe((categorias)=>{
+       this.aregloCategorias = categorias;
+       })
+    
+  }
+
+ 
 
 }
