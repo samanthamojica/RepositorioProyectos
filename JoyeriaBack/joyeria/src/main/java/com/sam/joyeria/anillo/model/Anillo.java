@@ -4,6 +4,7 @@ package com.sam.joyeria.anillo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Anillo {
 	private int id;
 	private int precio; 
 	private int idCategoria;
+	 @Column(length = 1200)
 	private String descripcion;
 	private String idAnillo;
 	private String nombreAnillo;

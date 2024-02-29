@@ -60,7 +60,11 @@ public class AnilloController {
 			catalogoAnillo.setUrl(entry.getValue());
 			catalogoAnilloService.almacenarImagenes(catalogoAnillo);
 		}
-
 	}
 
+
+	@GetMapping("/obtenerAnillos")
+	public List<Anillo> getAnillos() {
+		 return this.anilloService.obtenerAnillos();
+	}
 }

@@ -29,7 +29,11 @@ public class AnilloService {
 		int idAnillo;
 		System.out.print("Id del anillo almacenado: " + anillo.getId());
 		idAnillo = anillo.getId();
-		return idAnillo;
+		return idAnillo;		
+	}
+	
+	public List<Anillo> obtenerAnillos() {		
+		return this.anilloRepository.findAll();
 		
 	}
 
