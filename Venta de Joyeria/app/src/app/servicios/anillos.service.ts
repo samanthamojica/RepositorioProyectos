@@ -21,4 +21,8 @@ export class AnillosService {
   saveAnilloBD(anillo: Anillo): Observable<boolean> {
        return this.http.post<boolean>( 'http://localhost:8080/anillos/anillo/',   anillo );
   }
+
+  getAnillos(): Observable<Array<Anillo>>{
+    return this.http.get<Array<Anillo>>('http://localhost:8080/anillos/obtenerAnillos');
+  }
 }

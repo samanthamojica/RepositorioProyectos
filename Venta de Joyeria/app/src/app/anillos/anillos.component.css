@@ -74,26 +74,31 @@
             }
             /* ***************************************************ANILLOS  */
             
-            .contenedor .anillos {
+            .anillos {
                 width: 65vw;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
                 margin: 15px;
+                background-color: blue;
             }
             
-            .contenedor .anillos .card {
+            .anillo .card {
                 text-decoration: none;
                 margin: 20px;
                 background-color: #fff5e9;
             }
             
-            .contenedor .anillos .card a {
+            .anillo .card a {
                 text-decoration: none;
                 color: rgb(160, 128, 178);
             }
             
-            .contenedor .anillos .card a:hover img {
+            .anillo .card a:hover img {
                 transform: scale(0.99);
+            }
+            
+            .anillos .anillo p {
+                background-color: yellow;
             }
