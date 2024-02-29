@@ -68,7 +68,7 @@ public class ServiceS3Imagenes {
 			byte[] bytes = IOUtils.toByteArray(inputStream);
 			return new Asset(bytes, metadata.getContentType());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			throw new RuntimeException(e);
 		}
 
