@@ -12,16 +12,27 @@ import { CategoriasAnillosService } from '../servicios/categorias-anillos.servic
 })
 export class AnillosComponent {
 aregloCategorias: CategoriasAnillos[];
+arregloAnillos: Anillo[];
 
-  constructor(private servCategoriasAnillo: CategoriasAnillosService ) {}
+  constructor(private servCategoriasAnillo: CategoriasAnillosService,
+              private anilloService :AnillosService
+    ) {}
 
   ngOnInit(): void {
     this.obtenerCategoriasAnillos();
+    this.obtenerInfoAnillos();
   }
 
   obtenerCategoriasAnillos(){
     this.servCategoriasAnillo.obtenerCategoriasAnillos().subscribe((categorias)=>{
        this.aregloCategorias = categorias;
+       })
+    
+  }
+
+  obtenerInfoAnillos(){
+    this.anilloService.getAnillos().subscribe((infoAnillos)=>{
+        this.arregloAnillos = infoAnillos;
        })
     
   }

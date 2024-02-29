@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalAltaComponent } from './modal/modal-alta/modal-alta.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {LimitarPalabrasPipe} from './pipes/limitar-palabras-pipe'
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IniciarSesionEmpleadoComponent,
     AltaArticuloComponent,
     ModalAltaComponent,
+    LimitarPalabrasPipe
   ],
   imports: [
     BrowserModule,
