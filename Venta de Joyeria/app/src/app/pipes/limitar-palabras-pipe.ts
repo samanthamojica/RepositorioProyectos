@@ -10,8 +10,7 @@ export class LimitarPalabrasPipe  implements PipeTransform{
         if(!value) return '';
         const palabras = value.split(' ');
         if(palabras.length > limite){
-            debugger
-            return palabras.slice(0,limite).join(' ') + '...';
+              return palabras.slice(0,limite).join(' ') + '...';
         }
         return value;
     }

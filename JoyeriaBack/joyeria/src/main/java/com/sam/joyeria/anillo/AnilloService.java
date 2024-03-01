@@ -22,12 +22,13 @@ public class AnilloService {
 	// inyeccion de dependencias
 	@Autowired
 	private AnilloRepository anilloRepository;
+	
+	//@Autowired
+	//private AnilloRequestRepository anilloRequestRepo; 
 
 	public int guardarInfoAnillo(Anillo anillo) {
-		System.out.print(" ");
 		anilloRepository.save(anillo);
 		int idAnillo;
-		System.out.print("Id del anillo almacenado: " + anillo.getId());
 		idAnillo = anillo.getId();
 		return idAnillo;		
 	}

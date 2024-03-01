@@ -1,6 +1,6 @@
 import {  Injectable } from '@angular/core';
 import { Anillo } from '../models/anillo';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -25,4 +25,5 @@ export class AnillosService {
   getAnillos(): Observable<Array<Anillo>>{
     return this.http.get<Array<Anillo>>('http://localhost:8080/anillos/obtenerAnillos');
   }
+
 }

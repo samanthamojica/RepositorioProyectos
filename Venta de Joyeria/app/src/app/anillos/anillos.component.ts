@@ -33,9 +33,10 @@ arregloAnillos: Anillo[];
   obtenerInfoAnillos(){
     this.anilloService.getAnillos().subscribe((infoAnillos)=>{
         this.arregloAnillos = infoAnillos;
+        debugger
        })
-    
-  }
+      }
+
 
  
 
