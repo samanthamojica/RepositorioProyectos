@@ -50,7 +50,6 @@ public class AssetsController {
 	
 	@GetMapping("/obtenerImagenes")
 	public ResponseEntity<ByteArrayResource> getObject(@RequestParam String key) {
-		System.out.println("entro al metodo obtener Imagnes");
 		Asset assets = serviceS3.obtenerImagenes(key);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentLength(assets.getContent().length);

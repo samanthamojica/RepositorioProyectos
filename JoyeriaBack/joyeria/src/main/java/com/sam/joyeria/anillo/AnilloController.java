@@ -62,7 +62,6 @@ public class AnilloController {
 
 	@GetMapping("/obtenerAnillos")
 	public List<AnilloRequest> getAnillos() {
-
 		List<Anillo> listaAnillosInfo = this.anilloService.obtenerAnillos();
 		List<CatalogoAnillo> listaAnillosCatalogo = this.catalogoAnilloService.obtenerImagenes();
 		List<AnilloRequest> listaAnillos = new ArrayList<>();
@@ -70,26 +69,16 @@ public class AnilloController {
 		for (int i = 0; i < listaAnillosInfo.size(); i++) {
 			Anillo anillo = listaAnillosInfo.get(i);
 			AnilloRequest anilloRequest = new AnilloRequest(anillo);
-			// System.out.println(listaAnillos);
-			for (int j = 1; j < listaAnillosCatalogo.size(); j++) {
+			myMap = new HashMap<>();
+			for (int j = 0; j < listaAnillosCatalogo.size(); j++) {
 				CatalogoAnillo catalogoAnillo = listaAnillosCatalogo.get(j);
-				System.out.println(" idCatalogo "+catalogoAnillo.getIdCatalogo());
-				System.out.println("idCatalogo Anillo: " + anillo.getIdCatalogo());
-				
 				if (catalogoAnillo.getIdCatalogo() == anillo.getIdCatalogo()) {
 					myMap.put(catalogoAnillo.llave, catalogoAnillo.url);
 				}
 			}
 			anilloRequest.setCatalogoImagenes(myMap);
-		//	System.out.println(anilloRequest);
 			listaAnillos.add(anilloRequest);
 		}
-
-	//	System.out.println(listaAnillos);
-
-		//System.out.println(listaAnillosCatalogo);
-
 		return listaAnillos;
-
 	}
 }

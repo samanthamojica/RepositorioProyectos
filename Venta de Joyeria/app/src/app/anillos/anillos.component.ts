@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { AnillosService } from '../servicios/anillos.service';
-import { Anillo } from '../models/anillo';
-import { Router } from '@angular/router';
+
 import { CategoriasAnillos } from '../models/categorias-anillos';
 import { CategoriasAnillosService } from '../servicios/categorias-anillos.service';
+import { AnilloRequest } from '../models/anillo-request';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-anillos',
@@ -11,33 +12,36 @@ import { CategoriasAnillosService } from '../servicios/categorias-anillos.servic
   styleUrls: ['./anillos.component.css'],
 })
 export class AnillosComponent {
-aregloCategorias: CategoriasAnillos[];
-arregloAnillos: Anillo[];
+  aregloCategorias: CategoriasAnillos[];
+  arregloAnillos: AnilloRequest[];
+  keys: string[];
+  key: string = '';
 
-  constructor(private servCategoriasAnillo: CategoriasAnillosService,
-              private anilloService :AnillosService
-    ) {}
+  constructor(
+    private servCategoriasAnillo: CategoriasAnillosService,
+    private anilloService: AnillosService
+  ) {}
 
   ngOnInit(): void {
     this.obtenerCategoriasAnillos();
     this.obtenerInfoAnillos();
   }
 
-  obtenerCategoriasAnillos(){
-    this.servCategoriasAnillo.obtenerCategoriasAnillos().subscribe((categorias)=>{
-       this.aregloCategorias = categorias;
-       })
-    
+  obtenerCategoriasAnillos() {
+    this.servCategoriasAnillo
+      .obtenerCategoriasAnillos()
+      .subscribe((categorias) => {
+        this.aregloCategorias = categorias;
+      });
   }
 
-  obtenerInfoAnillos(){
-    this.anilloService.getAnillos().subscribe((infoAnillos)=>{
-        this.arregloAnillos = infoAnillos;
-        debugger
-       })
-      }
-
-
- 
-
+  obtenerInfoAnillos() {
+    this.anilloService.getAnillos().subscribe((infoAnillos) => {
+      this.arregloAnillos = infoAnillos;
+      for (let i = 0; i < this.arregloAnillos.length; i++) {
+        this.keys = Object.keys(this.arregloAnillos[i].catalogoImagenes);
+        this.arregloAnillos[i].imagenMuestra = this.keys[0];
+       }
+    });
+  }
 }

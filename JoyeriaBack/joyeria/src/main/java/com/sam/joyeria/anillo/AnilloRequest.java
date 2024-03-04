@@ -25,6 +25,8 @@ public class AnilloRequest {
 	private int idCatalogo;
 	private Map<String, String> catalogoImagenes;
 
+	public AnilloRequest() {}	
+	
 	public AnilloRequest(Anillo anillo) {
 		this.id = anillo.getId();
 		this.precio = anillo.getPrecio();

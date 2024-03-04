@@ -73,13 +73,15 @@
             <div class="anillo">
                 <div class="card anillo" style="width: 18rem;" *ngFor="let anillo of arregloAnillos">
                     <a routerLink="[Anillo; item.idAnillo">
-                        <img class=" card-img-top " src="http://localhost:8080/imagenes/obtenerImagenes?key=f9abb27e-760a-4395-bf70-a7243b8951fd.png" alt="Card image cap ">
+                        <img class=" card-img-top " src="http://localhost:8080/imagenes/obtenerImagenes?key={{anillo.imagenMuestra}}" alt="Card image cap ">
                     </a>
                     <a routerLink="[Anillo, item.idAnillo">
                         <div class="card-body">
                             <h5 class="card-title ">{{anillo.nombreAnillo }}</h5>
                             <p class="card-text ">{{anillo.descripcion | LimitarPalabras:10}}</p>
+
                         </div>
+
                     </a>
                 </div>
             </div>

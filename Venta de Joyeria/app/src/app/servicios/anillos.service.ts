@@ -2,6 +2,7 @@ import {  Injectable } from '@angular/core';
 import { Anillo } from '../models/anillo';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AnilloRequest } from '../models/anillo-request';
 
 
 @Injectable({
@@ -22,8 +23,8 @@ export class AnillosService {
        return this.http.post<boolean>( 'http://localhost:8080/anillos/anillo/',   anillo );
   }
 
-  getAnillos(): Observable<Array<Anillo>>{
-    return this.http.get<Array<Anillo>>('http://localhost:8080/anillos/obtenerAnillos');
+  getAnillos(): Observable<AnilloRequest[]>{
+    return this.http.get<AnilloRequest[]>('http://localhost:8080/anillos/obtenerAnillos');
   }
 
 }
