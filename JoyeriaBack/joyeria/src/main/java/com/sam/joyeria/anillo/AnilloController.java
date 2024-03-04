@@ -32,9 +32,7 @@ import com.sam.joyeria.catalogoAnillo.model.CatalogoAnillo;
 @RequestMapping("/anillos")
 public class AnilloController {
 
-	// @Autowired
 	private AnilloService anilloService;
-	// @Autowired
 	private CatalogoAnilloService catalogoAnilloService;
 
 	public AnilloController(AnilloService anilloService, CatalogoAnilloService catalogoAnilloService) {
@@ -62,9 +60,25 @@ public class AnilloController {
 		}
 	}
 
-
 	@GetMapping("/obtenerAnillos")
-	public List<Anillo> getAnillos() {
-		 return this.anilloService.obtenerAnillos();
+	public List<AnilloRequest> getAnillos() {
+		List<Anillo> listaAnillosInfo = this.anilloService.obtenerAnillos();
+		List<CatalogoAnillo> listaAnillosCatalogo = this.catalogoAnilloService.obtenerImagenes();
+		List<AnilloRequest> listaAnillos = new ArrayList<>();
+		Map<String, String> myMap = new HashMap<>();
+		for (int i = 0; i < listaAnillosInfo.size(); i++) {
+			Anillo anillo = listaAnillosInfo.get(i);
+			AnilloRequest anilloRequest = new AnilloRequest(anillo);
+			myMap = new HashMap<>();
+			for (int j = 0; j < listaAnillosCatalogo.size(); j++) {
+				CatalogoAnillo catalogoAnillo = listaAnillosCatalogo.get(j);
+				if (catalogoAnillo.getIdCatalogo() == anillo.getIdCatalogo()) {
+					myMap.put(catalogoAnillo.llave, catalogoAnillo.url);
+				}
+			}
+			anilloRequest.setCatalogoImagenes(myMap);
+			listaAnillos.add(anilloRequest);
+		}
+		return listaAnillos;
 	}
 }

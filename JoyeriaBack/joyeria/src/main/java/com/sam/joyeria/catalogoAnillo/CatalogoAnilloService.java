@@ -1,5 +1,7 @@
 package com.sam.joyeria.catalogoAnillo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,11 @@ public class CatalogoAnilloService {
 	
 	public void almacenarImagenes(CatalogoAnillo catalogo) {
 		CatalogoAnillo catalogoRecibido = new CatalogoAnillo();
-		catalogoRecibido = 	catalogoAnilloRepository.save(catalogo);
-		
+		catalogoRecibido = 	catalogoAnilloRepository.save(catalogo);		
 	}
+	
+	public List<CatalogoAnillo> obtenerImagenes() {
+		return this.catalogoAnilloRepository.findAll();
+	} 
 
 }
