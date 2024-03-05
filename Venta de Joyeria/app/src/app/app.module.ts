@@ -28,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalAltaComponent } from './modal/modal-alta/modal-alta.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {LimitarPalabrasPipe} from './pipes/limitar-palabras-pipe'
+import {LimitarPalabrasPipe} from './pipes/limitar-palabras-pipe';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {LimitarPalabrasPipe} from './pipes/limitar-palabras-pipe'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
 
   ],
   exports: [RouterModule],

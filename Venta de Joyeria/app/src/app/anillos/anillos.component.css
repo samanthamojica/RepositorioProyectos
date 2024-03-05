@@ -1,104 +1,114 @@
-            * {
-                box-sizing: border-box;
-            }
-            
-            .contenedor {
-                display: flex;
-                flex-direction: row;
-            }
-            /* ************************************Filtros */
-            
-            .filtros {
-                width: 35vw;
-                margin: 10px;
-                overflow: hidden;
-                background-color: rgba(200, 168, 218, 0.2);
-            }
-            
-            .filtros .categorias {
-                margin: 15px;
-                padding: 15px;
-            }
-            
-            .filtros h5 {
-                color: rgb(160, 128, 178);
-            }
-            /* *************************************CATEGORIAS */
-            
-            .filtros .categorias ul li a {
-                text-decoration: none;
-                color: rgb(160, 128, 178);
-                line-height: 2.5;
-            }
-            
-            .filtros .categorias ul {
-                list-style-type: none;
-            }
-            /* *******************************************PRECIOS */
-            
-            .filtros .precio {
-                margin: 15px;
-                padding: 15px;
-            }
-            
-            .filtros .precio .example-section ul li {
-                list-style-type: none;
-                color: rgb(160, 128, 178);
-            }
-            /* ***********************************************COLORES */
-            
-            .filtros .colores {
-                margin: 15px;
-                padding: 15px;
-            }
-            
-            .filtros .colores .listaColores img {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                margin: 5px;
-            }
-            
-            .filtros .colores .listaColores li {
-                line-height: 2.5;
-                list-style-type: none;
-            }
-            
-            .filtros .colores .listaColores li a {
-                text-decoration: none;
-                color: rgb(160, 128, 178);
-            }
-            
-            .filtros .colores .listaColores li a:hover {
-                font-size: 17px;
-            }
-            /* ***************************************************ANILLOS  */
-            
-            .anillos {
-                width: 65vw;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: 15px;
-                background-color: blue;
-            }
-            
-            .anillo .card {
-                text-decoration: none;
-                margin: 20px;
-                background-color: #fff5e9;
-            }
-            
-            .anillo .card a {
-                text-decoration: none;
-                color: rgb(160, 128, 178);
-            }
-            
-            .anillo .card a:hover img {
-                transform: scale(0.99);
-            }
-            
-            .anillos .anillo p {
-                background-color: yellow;
-            }
+        * {
+            box-sizing: border-box;
+        }
+        
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+        }
+        /* ************************************Filtros */
+        
+        .filtros {
+            width: 35vw;
+            margin: 10px;
+            overflow: hidden;
+            background-color: rgba(200, 168, 218, 0.2);
+        }
+        
+        .filtros .categorias {
+            margin: 15px;
+            padding: 15px;
+        }
+        
+        .filtros h5 {
+            color: rgb(160, 128, 178);
+        }
+        /* *************************************CATEGORIAS */
+        
+        .filtros .categorias ul li a {
+            text-decoration: none;
+            color: rgb(160, 128, 178);
+            line-height: 2.5;
+        }
+        
+        .filtros .categorias ul {
+            list-style-type: none;
+        }
+        /* *******************************************PRECIOS */
+        
+        .filtros .precio {
+            margin: 15px;
+            padding: 15px;
+        }
+        
+        .filtros .precio .example-section ul li {
+            list-style-type: none;
+            color: rgb(160, 128, 178);
+        }
+        /* ***********************************************COLORES */
+        
+        .filtros .colores {
+            margin: 15px;
+            padding: 15px;
+        }
+        
+        .filtros .colores .listaColores img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        
+        .filtros .colores .listaColores li {
+            line-height: 2.5;
+            list-style-type: none;
+        }
+        
+        .filtros .colores .listaColores li a {
+            text-decoration: none;
+            color: rgb(160, 128, 178);
+        }
+        
+        .filtros .colores .listaColores li a:hover {
+            font-size: 17px;
+        }
+        /* ***************************************************ANILLOS  */
+        
+        .anillos {
+            margin: 15px;
+        }
+        
+        .anillo {
+            background-color: rgb(215, 211, 240);
+            width: 65vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .anillo .card {
+            text-decoration: none;
+            margin: 20px;
+            background-color: #fff5e9;
+        }
+        
+        .anillo .card a {
+            text-decoration: none;
+            color: rgb(160, 128, 178);
+        }
+        
+        .anillo .card a:hover img {
+            transform: scale(0.99);
+        }
+        
+        .paginacion {
+            background-color: rgb(226, 226, 243);
+            padding: 10px;
+        }
+        
+        .paginacion .pag {
+            margin-top: 0px;
+            /*  background-color: yellow; */
+            margin-left: 40%;
+        }
