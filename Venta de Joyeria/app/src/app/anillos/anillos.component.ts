@@ -16,7 +16,7 @@ export class AnillosComponent {
   arregloAnillos: AnilloRequest[];
   keys: string[];
   key: string = '';
-
+  page: number;
   constructor(
     private servCategoriasAnillo: CategoriasAnillosService,
     private anilloService: AnillosService
@@ -41,7 +41,7 @@ export class AnillosComponent {
       for (let i = 0; i < this.arregloAnillos.length; i++) {
         this.keys = Object.keys(this.arregloAnillos[i].catalogoImagenes);
         this.arregloAnillos[i].imagenMuestra = this.keys[0];
-       }
+      }
     });
   }
 }

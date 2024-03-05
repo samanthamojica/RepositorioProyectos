@@ -71,7 +71,7 @@
 
         <div class="anillos">
             <div class="anillo">
-                <div class="card anillo" style="width: 18rem;" *ngFor="let anillo of arregloAnillos">
+                <div class="card anillo" style="width: 18rem;" *ngFor="let anillo of arregloAnillos | paginate: { itemsPerPage: 9, currentPage: page }">
                     <a routerLink="[Anillo; item.idAnillo">
                         <img class=" card-img-top " src="http://localhost:8080/imagenes/obtenerImagenes?key={{anillo.imagenMuestra}}" alt="Card image cap ">
                     </a>
@@ -79,13 +79,18 @@
                         <div class="card-body">
                             <h5 class="card-title ">{{anillo.nombreAnillo }}</h5>
                             <p class="card-text ">{{anillo.descripcion | LimitarPalabras:10}}</p>
-
                         </div>
-
                     </a>
                 </div>
             </div>
+            <div class="paginacion">
+                <div class="pag">
+                    <pagination-controls class="mis-controles" (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+                </div>
+            </div>
+
         </div>
+
     </div>
 </body>
 
