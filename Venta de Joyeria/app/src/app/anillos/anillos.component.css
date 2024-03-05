@@ -109,6 +109,11 @@
         
         .paginacion .pag {
             margin-top: 0px;
-            /*  background-color: yellow; */
             margin-left: 40%;
+        }
+        
+        .anillo .card .card-body:hover {
+            background-color: rgb(234, 219, 243);
+            transform: scale(0.99);
+            margin: 0px;
         }
