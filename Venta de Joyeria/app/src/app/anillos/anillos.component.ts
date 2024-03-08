@@ -25,7 +25,7 @@ export class AnillosComponent {
   ngOnInit(): void {
     this.obtenerCategoriasAnillos();
     this.obtenerInfoAnillos();
-  }
+     }
 
   obtenerCategoriasAnillos() {
     this.servCategoriasAnillo
