@@ -81,4 +81,10 @@ public class AnilloController {
 		}
 		return listaAnillos;
 	}
+	
+	@GetMapping ("/obtenerAnillos/categoria/")
+	public List<Anillo> getAnillosByCategoria() {
+		return this.anilloService.obtenerAnillosByCategoria();
+	}
+	
 }
