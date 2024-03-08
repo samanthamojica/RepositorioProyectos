@@ -22,5 +22,5 @@ public class CatalogoAnilloService {
 	public List<CatalogoAnillo> obtenerImagenes() {
 		return this.catalogoAnilloRepository.findAll();
 	} 
-
-}
+	
+	}

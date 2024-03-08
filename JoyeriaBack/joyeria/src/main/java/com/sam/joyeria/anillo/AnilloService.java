@@ -35,8 +35,13 @@ public class AnilloService {
 		return this.anilloRepository.findAll();
 	}
 
-	public List<Anillo> obtenerAnillosByCategoria() {
-		return this.anilloRepository.findeAnillosByCategoria(1);
-	}
+	/*public void obtenerAnillosByCategoria(Integer id) {		
+		List<Anillo> r = this.anilloRepository.findeAnillosByCategoria(5);
+		System.out.println(r);
+	
+	}*/
+	
+	
+	
 
 }
