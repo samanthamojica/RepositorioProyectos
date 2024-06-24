@@ -24,15 +24,24 @@ public class AnilloService {
 	private AnilloRepository anilloRepository;
 
 	public int guardarInfoAnillo(Anillo anillo) {
-		anilloRepository.save(anillo);
+		Anillo anilloNuevo = new Anillo();
+		anilloNuevo = anilloRepository.save(anillo);
 		int idAnillo;
-		idAnillo = anillo.getId();
+		idAnillo = anilloNuevo.getId();
 		return idAnillo;
 	}
 
 	public List<Anillo> obtenerAnillos() {
 		return this.anilloRepository.findAll();
-
 	}
+
+	/*public void obtenerAnillosByCategoria(Integer id) {		
+		List<Anillo> r = this.anilloRepository.findeAnillosByCategoria(5);
+		System.out.println(r);
+	
+	}*/
+	
+	
+	
 
 }

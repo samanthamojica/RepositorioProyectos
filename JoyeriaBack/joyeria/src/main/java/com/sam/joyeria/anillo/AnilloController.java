@@ -81,4 +81,11 @@ public class AnilloController {
 		}
 		return listaAnillos;
 	}
+
+	@GetMapping("/obtenerAnillos/categoria/{id}")
+	public void getAnillosByCategoria(@PathVariable Integer id) {
+		System.out.println(id);
+
+	}
+
 }
